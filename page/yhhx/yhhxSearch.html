@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>银行画像列表页面</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
+    <link rel="stylesheet" href="tagcloud.min.css" media="all"/>
+    <style>
+        .tagcloudBox {
+            position: fixed;
+            top: 50%;
+            margin-top: -320px;
+            left: 50%;
+            margin-left: -300px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="childrenBody changeTable">
+<div id="container">
+    <div id="search_box">
+        <div class="wrapper">
+            <input type="text" class="searchVal" id="search" name="search" placeholder="请输入金融许可证号或银行机构名称"/>
+            <button type="button" class="search_btn" data-url="/bicms/page/yhhx/yhhxList.html"><i class="fa fa-search fa-lg"></i><cite class="layui-hide">银行画像搜索列表</cite></button>
+        </div>
+    </div>
+</div>
+<div class="tagcloudBox">
+    <div class="tagcloud">
+        <a href="javascript:;" data-url="/bicms/page/yhhx/yhhxDetails.html" class="whns"><cite>武汉农商</cite></a>
+        <a href="javascript:;">汉口银行</a>
+        <a href="javascript:;">吉林银行</a>
+        <a href="javascript:;">中原银行</a>
+        <a href="javascript:;">沧州银行</a>
+        <a href="javascript:;">包商银行</a>
+        <a href="javascript:;">天津农商银行</a>
+        <a href="javascript:;">哈尔滨银行</a>
+        <a href="javascript:;">湖北银行</a>
+        <a href="javascript:;">成都银行</a>
+    </div>
+</div>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="tagcloud.min.js"></script>
+<script type="text/javascript" src="yhhxSearch.js"></script>
+<script>
+    tagcloud({
+        //参数名: 默认值
+        fontsize: 18,       //基本字体大小
+        radius: 180,         //滚动半径
+        mspeed: "normal",   //滚动最大速度
+        ispeed: "normal",   //滚动初速度
+        direction: 135,     //初始滚动方向
+        keep: true          //鼠标移出组件后是否继续随鼠标滚动
+    });
+</script>
+</body>
+</html>

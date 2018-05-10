@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>银行画像列表页面</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
+</head>
+<body class="childrenBody changeTable changeSpace">
+<form class="layui-form">
+    <div class="layui-form-item">
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input searchVala" placeholder="金融许可证号"/>
+        </div>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input searchValb" placeholder="银行机构名称"/>
+        </div>
+        <a class="layui-btn layui-btn-normal search_btn"><i class="fa fa-search"></i>搜索</a>
+    </div>
+</form>
+<table id="newsList" lay-filter="newsList"></table>
+<!--操作-->
+<script type="text/html" id="newsListBar">
+    <a href="javascript:;" data-url="/bicms/page/yhhx/yhhxDetails.html" class="layui-btn layui-btn-xs layui-btn-normal whns" lay-event="edit"><cite class='layui-hide'>武汉农商</cite>详情</a>
+</script>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="yhhxList.js"></script>
+
+</body>
+</html>

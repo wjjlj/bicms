@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>企业画像详情页面</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
+</head>
+<body class="childrenBody changeTable changeTab">
+
+<div class="layui-tab">
+    <ul class="layui-tab-title">
+        <li class="layui-this">基本信息</li>
+        <li>关联关系</li>
+        <li>事件信息</li>
+        <li>资产信息</li>
+        <li>信贷信息</li>
+        <li>流水分析</li>
+        <li>担保信息</li>
+        <li>负面信息</li>
+    </ul>
+    <div class="layui-tab-content" style="height: 100%">
+        <div class="layui-tab-item layui-show">
+            <div class="qyimgJbxx">
+                <p class="xtitle">所在银行机构</p>
+                <form class="layui-form" action="">
+                    <div class="layui-form-item" style="width: 80%">
+                        <select name="xxx" lay-verify="required">
+                            <option value=""></option>
+                            <option value="0">京城农村商业银行臧龙岛之行1</option>
+                            <option value="1">京城农村商业银行臧龙岛之行2</option>
+                            <option value="2">京城农村商业银行臧龙岛之行3</option>
+                            <option value="3">京城农村商业银行臧龙岛之行4</option>
+                            <option value="4">京城农村商业银行臧龙岛之行5</option>
+                        </select>
+                    </div>
+                </form>
+                <p class="xtitle">基础信息</p>
+                <table width="80%" border="0" cellpadding="0" cellspacing="0" class="qyimg">
+                    <tr>
+                        <th align="center">客户名称</th>
+                        <th align="center">所属行业</th>
+                        <th align="center">组织机构代码</th>
+                        <th align="center">客户统一编号</th>
+                    </tr>
+                    <tr>
+                        <td align="center">京城市卧虎科技有限公司</td>
+                        <td align="center">保洁</td>
+                        <td align="center">0000799756000</td>
+                        <td align="center">20006371799</td>
+                    </tr>
+                </table>
+                <p class="xtitle">工商信息</p>
+                <table width="80%" border="0" cellpadding="0" cellspacing="0" class="qyimg">
+                    <tr>
+                        <th>法定代表人</th>
+                        <td>刘向</td>
+                        <th>国税登记号</th>
+                        <td>420115799756000</td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <th>法定代表人身份证</th>
+                        <td>130732198703147896</td>
+                        <th>营业执照有效期</th>
+                        <td>99991231</td>
+                    </tr>
+                    <tr>
+                        <th>营业执照号</th>
+                        <td>4201152101605</td>
+                        <th>注册资本币种</th>
+                        <td>CNY</td>
+                    </tr>
+                    <tr>
+                        <th>注册资本（万元）</th>
+                        <td>100000</td>
+                        <th>实收资本币种</th>
+                        <td>CNY</td>
+                    </tr>
+                    <tr>
+                        <th>实收资本（万元）</th>
+                        <td>100000</td>
+                        <th>地税登记号</th>
+                        <td>420115799756111</td>
+                    </tr>
+                </table>
+                <p class="xtitle">风险信息</p>
+                <table width="80%" border="0" cellpadding="0" cellspacing="0" class="qyimg">
+                    <tr bgcolor="#f2f6fc">
+                        <th align="center">次级类</th>
+                        <th align="center">可疑类</th>
+                        <th align="center">损失类</th>
+                    </tr>
+                    <tr>
+                        <td align="center">0</td>
+                        <td align="center">0</td>
+                        <td align="center">50000</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="layui-tab-item">关联关系</div>
+        <div class="layui-tab-item">事件信息</div>
+        <div class="layui-tab-item">资产信息</div>
+        <div class="layui-tab-item">
+            <div class="layui-tab">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">贷款借据</li>
+                    <li>贷款展期</li>
+                    <li>贷款核销</li>
+                    <li>授信情况</li>
+                    <li>委托贷款</li>
+                    <li>银团贷款</li>
+                    <li>信贷业务质或抵押物</li>
+                </ul>
+                <div class="layui-tab-content" style="padding: 10px 0">
+                    <div class="layui-tab-item layui-show" id="container3"></div>
+                    <div class="layui-tab-item">
+                        <table id="xdxxList"></table>
+                    </div>
+                    <div class="layui-tab-item">贷款核销</div>
+                    <div class="layui-tab-item">授信情况</div>
+                    <div class="layui-tab-item">委托贷款</div>
+                    <div class="layui-tab-item">银团贷款</div>
+                    <div class="layui-tab-item">信贷业务质或抵押物</div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-tab-item">流水分析</div>
+        <div class="layui-tab-item">担保信息</div>
+        <div class="layui-tab-item">负面信息</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="xdxxList.js"></script>
+<script type="text/javascript" src="qyhxList.js"></script>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/highcharts.js"></script>
+<script src="../../js/highcharts-3d.js"></script>
+<script>
+    $(document).ready(function () {
+        var chart = {
+            type: 'column'
+        };
+        var title = {
+            text: 'EAST大数据分析平台'
+        };
+        var subtitle = {
+            text: 'Highcharts 柱形图'
+        };
+        var xAxis = {
+            categories: ['贷款业务', '自营贷款', '票据贴现', '票据承兑'],
+            crosshair: true
+        };
+        var yAxis = {
+            min: 0,
+            title: {
+                text: '单位：亿元'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        };
+        var tooltip = {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        };
+        var plotOptions = {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        };
+        // var credits = {
+        //     enabled: false
+        // };
+
+        var series = [{
+            name: '2017.03',
+            data: [5432, 3111, 4222, 3444]
+        }, {
+            name: '2018.03',
+            data: [6543, 3011, 3133, 2544]
+        }];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.tooltip = tooltip;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.series = series;
+        json.plotOptions = plotOptions;
+        // json.credits = credits;
+        $('#container3').highcharts(json);
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>企业画像</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
+    <link rel="stylesheet" href="tagcloud.min.css" media="all"/>
+    <style>
+        .tagcloudBox {
+            position: fixed;
+            top: 50%;
+            margin-top: -400px;
+            left: 50%;
+            margin-left: -540px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="childrenBody changeTable">
+<div id="container">
+    <div id="search_box">
+        <div class="wrapper">
+            <input type="text" class="searchVal" id="search" name="search" placeholder="请输入客户统一编号或企业名称"/>
+            <button type="button" class="search_btn" data-url="/bicms/page/qyhx/qyhxList.html"><i class="fa fa-search fa-lg"></i><cite class="layui-hide">企业画像搜索列表</cite></button>
+        </div>
+    </div>
+</div>
+<div class="tagcloudBox">
+    <div class="tagcloud">
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>京城江夏经济开发区藏龙岛办事处农村会计服务中心</cite></a>
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>京城市卧虎科技有限公司</cite></a>
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>京城市卧虎网络有限公司</cite></a>
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>京城市藏龙岛三利保洁服务有限公司</cite></a>
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>河西省蔡甸监狱(工资代发户)</cite></a>
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>京城市硚口区人民政府六角亭街办事处</cite></a>
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>京城市洪山区青菱乡长江村民委员会</cite></a>
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>京城市东河生态旅游风景区鼓架社区居民委员会</cite></a>
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>京城市洪山区人民政府和平街厂前村村民委员会</cite></a>
+        <a href="javascript:;" data-url="/bicms/page/qyhx/qyhxDetails.html" class="qyhxDetails"><cite>京城市洪山区人民政府和平街京丰村村民委员会</cite></a>
+    </div>
+</div>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="tagcloud.min.js"></script>
+<script type="text/javascript" src="qyhxSearch.js"></script>
+<script>
+    tagcloud({
+        //参数名: 默认值
+        fontsize: 18,       //基本字体大小
+        radius: 300,         //滚动半径
+        mspeed: "normal",   //滚动最大速度
+        ispeed: "normal",   //滚动初速度
+        direction: 135,     //初始滚动方向
+        keep: true          //鼠标移出组件后是否继续随鼠标滚动
+    });
+</script>
+</body>
+</html>

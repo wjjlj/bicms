@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>任务管理-任务定义</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
+</head>
+<body class="childrenBody changeTable changeSpace">
+<form class="layui-form">
+    <div class="layui-form-item">
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input searchVal" placeholder="名称"/>
+        </div>
+        <div class="layui-input-inline">
+            <select name="n1" lay-verify="">
+                <option value="">执行频度</option>
+                <option value="1">全部</option>
+                <option value="2">执行一次</option>
+                <option value="3">每周一次</option>
+                <option value="4">每月一次</option>
+                <option value="5">每季度一次</option>
+                <option value="6">每半年一次</option>
+                <option value="7">每年一次</option>
+            </select>
+        </div>
+        <div class="layui-input-inline">
+            <select name="n2" lay-verify="">
+                <option value="">发布状态</option>
+                <option value="1">全部</option>
+                <option value="2">未发布</option>
+                <option value="3">已发布</option>
+            </select>
+        </div>
+        <div class="layui-input-inline">
+            <select name="n3" lay-verify="">
+                <option value="">启用状态</option>
+                <option value="1">全部</option>
+                <option value="2">禁用</option>
+                <option value="3">启用</option>
+            </select>
+        </div>
+        <a class="layui-btn layui-btn-normal search_btn"><i class="fa fa-search"></i>搜索</a>
+    </div>
+</form>
+<div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm layui-btn-normal btnNew"><i class="fa fa-folder-o"></i>新增</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-pencil"></i>修改</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-trash-o"></i>删除</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal btnCywh"><i class="fa fa-vcard-o"></i>成员维护</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-cog"></i>参数设置</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-exchange"></i>内部顺序调整</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-check"></i>发布任务</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-rotate-left"></i>撤回任务</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-key"></i>启用任务</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-minus-circle"></i>禁用任务</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-hourglass-start"></i>运行</button>
+</div>
+<table id="linkList" lay-filter="linkList"></table>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="rwdy.js"></script>
+</body>
+</html>

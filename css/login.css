@@ -1,0 +1,164 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 0 none;
+}
+
+body {
+    color: #333;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    background-color: #FFFFFF;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.login_bg01 {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    bottom: 0;
+    background-image: url("../images/login/bg01.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    animation: slash 1.5s ease;
+    z-index: 10;
+}
+.login_bg02 {
+    width: 331px;
+    height: 735px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../images/login/bg02.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    animation: slash 2.5s ease;
+    z-index: 20;
+}
+@keyframes slash {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+.w420 {
+    width: 420px;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 75%;
+    margin-left: -210px;
+    /*background-color: #DDD;*/
+}
+.login_logo {
+    width: 231px;
+    height: 111px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -115px;
+    background-image: url("../images/login/login_logo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    animation: logo 2s ease;
+    z-index: 30;
+}
+@keyframes logo {
+    0% {
+        width: 260px;
+        height: 125px;
+    }
+    100% {
+        width: 231px;
+        height: 111px;
+    }
+}
+.login_area {
+    width: 420px;
+    height: auto;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    animation: area 2s ease;
+    z-index: 40;
+}
+@keyframes area {
+    0% {
+        bottom: 2%;
+    }
+    100% {
+        bottom: 10%;
+    }
+}
+div.userClass {
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #dddddd;
+    background: url(../images/icon-user.png) no-repeat left center;
+    padding-left: 32px;
+}
+.input-user {
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    color: #999;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none 0;
+    outline: none;
+    background: none;
+}
+div.pwClass {
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #dddddd;
+    background: url(../images/icon-pass.png) no-repeat left center;
+    padding-left: 32px;
+}
+.input-pw {
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    color: #999;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none 0;
+    outline: none;
+    background: url(../images/pass-txt.png) no-repeat left center;
+}
+.loginbtn {
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    color: #FFF;
+    width: 100%;
+    padding: 12px 0;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: #3498DB;
+    border-radius: 10px;
+}
+.loginbtn:hover, .loginbtn:focus {
+    background: #3292d1;
+}
+.loginbtn:active {
+    color: #ddd;
+}

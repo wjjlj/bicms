@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>EAST大数据分析平台</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="css/index.css" media="all" />
+	<link rel="stylesheet" href="css/message.css" media="all" />
+	<link rel="stylesheet" href="layui/font-awesome/css/font-awesome.css" media="all" />
+</head>
+<body class="main_body changeIndex">
+	<div class="layui-layout layui-layout-admin showMenu">
+		<!-- 顶部 -->
+		<div class="layui-header header">
+			<div class="layui-main mag0">
+				<a href="/bicms" class="logo"></a>
+				<!-- 显示/隐藏菜单 -->
+				<!--<a href="javascript:;" class="seraph hideMenu icon-caidan"></a>-->
+				<!-- 顶级菜单 -->
+				<ul class="layui-nav topLevelMenus" pc>
+					<li class="layui-nav-item yhhx">
+						<a href="javascript:;" data-url="page/yhhx/yhhxSearch.html"><i class="icon_yhhx"></i><cite>银行画像</cite></a>
+					</li>
+					<li class="layui-nav-item qyhx">
+						<a href="javascript:;" data-url="page/qyhx/qyhxSearch.html"><i class="icon_qyhx"></i><cite>企业画像</cite></a>
+					</li>
+					<li class="layui-nav-item" data-menu="mxgl" pc>
+						<a href="javascript:;"><i class="icon_mxgl"></i><cite>模型管理</cite></a>
+					</li>
+					<li class="layui-nav-item" data-menu="rwgl" pc>
+						<a href="javascript:;"><i class="icon_rwgl"></i><cite>任务管理</cite></a>
+					</li>
+					<li class="layui-nav-item" data-menu="znfx" pc>
+						<a href="javascript:;"><i class="icon_znfx"></i><cite>自能分析</cite></a>
+					</li>
+					<li class="layui-nav-item page404">
+						<a href="javascript:;" data-url="page/404.html"><i class="icon_404"></i><cite>404页面</cite></a>
+					</li>
+				</ul>
+			    <!-- 顶部右侧菜单 -->
+			    <ul class="layui-nav top_menu">
+					<li class="layui-nav-item" id="userInfo">
+						<a href="javascript:;"><img src="images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName">admin</cite></a>
+						<dl class="layui-nav-child">
+							<dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
+							<dd><a href="javascript:;" data-url="page/user/changePwd.html"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<div id="message"></div>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;" class="signOut"><i class="fa fa-power-off fa-lg"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 左侧导航 -->
+		<div class="layui-side layui-bg-diy">
+			<div class="navBar layui-side-scroll" id="navBar">
+				<ul class="layui-nav layui-nav-tree">
+					<!--<li class="layui-nav-item layui-this">-->
+						<!--<a href="javascript:;" data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>后台首页</cite></a>-->
+					<!--</li>-->
+				</ul>
+			</div>
+		</div>
+		<!-- 右侧内容 -->
+		<div class="layui-body layui-form">
+			<div class="layui-tab mag0" lay-filter="bodyTab" id="top_tabs_box">
+				<ul class="layui-tab-title top_tab" id="top_tabs">
+					<li class="layui-this" lay-id=""><i class="layui-icon">&#xe68e;</i> <cite>首页</cite></li>
+				</ul>
+				<ul class="layui-nav closeBox">
+				  <li class="layui-nav-item">
+				    <a href="javascript:;"><i class="layui-icon caozuo">&#xe643;</i> 页面操作</a>
+				    <dl class="layui-nav-child">
+					  <dd><a href="javascript:;" class="refresh refreshThis"><i class="layui-icon">&#x1002;</i> 刷新当前</a></dd>
+				      <dd><a href="javascript:;" class="closePageOther"><i class="seraph icon-prohibit"></i> 关闭其他</a></dd>
+				      <dd><a href="javascript:;" class="closePageAll"><i class="seraph icon-guanbi"></i> 关闭全部</a></dd>
+				    </dl>
+				  </li>
+				</ul>
+				<a id="sideMenu" href="javascript:;"></a>
+				<div class="layui-tab-content clildFrame">
+					<div class="layui-tab-item layui-show">
+						<iframe src="page/main.html"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 底部 -->
+		<!--<div class="layui-footer footer">-->
+			<!--<p><span>copyright @2018 青麦科技</span></p>-->
+		<!--</div>-->
+	</div>
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<!--<script type="text/javascript" src="js/cache.js"></script>-->
+	<script type="text/javascript" src="js/message.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script>
+        $(function(){
+            MessagePlugin.init({
+                elem: "#message",
+                msgData: [{text: "message1", id: 1, readStatus: 1},
+                    {text: "message2", id: 2, readStatus: 0},
+                    {text: "message3", id: 3, readStatus: 0},
+                    {text: "message4", id: 4, readStatus: 0},
+                    {text: "message5", id: 5, readStatus: 0},
+                    {text: "message6", id: 6, readStatus: 0}],
+                msgUnReadData: 99,
+                noticeUnReadData: 99,
+                msgClick: function(obj) {
+                    alert("消息点击事件");
+                },
+                noticeClick: function(obj) {
+                    alert("提醒点击事件");
+                },
+                allRead: function(obj) {
+                    alert("全部已读");
+                },
+                getNodeHtml: function(obj, node) {
+                    if (obj.readStatus == 1) {
+                        node.isRead = true;
+                    } else {
+                        node.isRead = false;
+                    }
+                    var html = "<p>"+ obj.text +"</p>";
+
+                    node.html = html;
+
+                    return node;
+                }
+            });
+        });
+	</script>
+</body>
+</html>

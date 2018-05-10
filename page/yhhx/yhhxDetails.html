@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>银行画像详情页面</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
+</head>
+<body class="childrenBody changeTab">
+
+<div class="layui-tab">
+    <ul class="layui-tab-title">
+        <li class="layui-this">基本信息</li>
+        <li>股东关系</li>
+        <li>同业信息</li>
+        <li>存款信息</li>
+        <li>贷款信息</li>
+        <li>不良贷款率</li>
+        <li>关注类贷款向下迁徙率</li>
+        <li>存贷比</li>
+        <li>银行职位信息</li>
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+            <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0" class="bankimg">
+                <thead>
+                <tr>
+                    <th colspan="2" width="50%" align="center"><table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td><img src="../../images/whns_bank_logo.png" width="32" height="32" /></td>
+                            <td class="dtitle">银行机构名称：武汉农商</td>
+                        </tr>
+                    </table></th>
+                    <th colspan="2" width="50%" align="center"><table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td><img src="../../images/bank_num_logo.png" width="32" height="32" /></td>
+                            <td class="dtitle">金融许可证号：B0123456789</td>
+                        </tr>
+                    </table></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr bgcolor="#fafafa">
+                    <td class="xtitle" align="center"><i class="fa fa-user-circle fa-lg" style="margin-right:10px;"></i>个人客户数：5578</td>
+                    <td class="xtitle" align="center"><i class="fa fa-user-circle-o fa-lg" style="margin-right:10px;"></i>企业客户数：308</td>
+                    <td class="xtitle" align="center"><i class="fa fa-university fa-lg" style="margin-right:10px;"></i>网点数：67</td>
+                    <td class="xtitle" align="center"><i class="fa fa-user-o fa-lg" style="margin-right:10px;"></i>在职员工数：156</td>
+                </tr>
+                <tr>
+                    <td class="chart" colspan="2" align="center" id="container0"></td>
+                    <td class="chart" colspan="2" align="center" id="container1"></td>
+                </tr>
+                <tr>
+                    <td class="chart" colspan="2" align="center" id="container2"></td>
+                    <td class="chart" colspan="2" align="center" id="container3"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="layui-tab-item">股东关系</div>
+        <div class="layui-tab-item">同业信息</div>
+        <div class="layui-tab-item">存款信息</div>
+        <div class="layui-tab-item">贷款信息</div>
+        <div class="layui-tab-item">不良贷款率</div>
+        <div class="layui-tab-item">关注类贷款向下迁徙率</div>
+        <div class="layui-tab-item">存贷比</div>
+        <div class="layui-tab-item">银行职位信息</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/highcharts.js"></script>
+<script src="../../js/highcharts-3d.js"></script>
+<script>
+    layui.use('element', function () {
+        var element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+    });
+    $(document).ready(function () {
+        var chart = {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                // beta: 0
+            }
+        };
+        var title = {
+            text: 'EAST大数据分析平台'
+        };
+        var subtitle = {
+            text: 'Highcharts 3Dbing饼状图'
+        };
+        var tooltip = {
+            pointFormat: '{series.name}: <b>{point.percentage:.2f}%</b>'
+        };
+
+        var plotOptions = {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}<br>{point.percentage:.2f} %'
+                },
+                showInLegend: true
+            }
+        };
+        var series = [{
+            type: 'pie',
+            name: 'Browser share',
+            data: [
+                ['活期', 1116],
+                ['定期', 1132],
+                {
+                    name: '整体',
+                    y: 1215,
+                    sliced: true,
+                    selected: true
+                }
+            ]
+        }];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.tooltip = tooltip;
+        json.plotOptions = plotOptions;
+        json.series = series;
+        $('#container0').highcharts(json);
+    });
+    $(document).ready(function () {
+        var chart = {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        };
+        var title = {
+            text: 'EAST大数据分析平台'
+        };
+        var subtitle = {
+            text: 'Highcharts 3D圆环图'
+        };
+
+        var tooltip = {
+            pointFormat: '{series.name}: <b>{point.percentage:.2f}%</b>'
+        };
+
+        var plotOptions = {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                innerSize: 100,
+                depth: 45,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}<br>{series.data.name}<br>{point.percentage:.2f} %'
+                },
+                showInLegend: true
+            }
+        };
+
+        var series = [{
+            name: '配送量',
+            data: [
+                ['自营贷款', 1234],
+                ['委托贷款', 1345],
+                ['商贷', 1456],
+                ['票据兑现', 1000]
+            ]
+        }];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.tooltip = tooltip;
+        json.plotOptions = plotOptions;
+        json.series = series;
+        $('#container1').highcharts(json);
+    });
+    $(document).ready(function () {
+        var chart = {
+            type: 'column'
+        };
+        var title = {
+            text: 'EAST大数据分析平台'
+        };
+        var subtitle = {
+            text: 'Highcharts 柱形图'
+        };
+        var xAxis = {
+            categories: ['贷款业务', '自营贷款', '票据贴现', '票据承兑'],
+            crosshair: true
+        };
+        var yAxis = {
+            min: 0,
+            title: {
+                text: '单位：亿元'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        };
+        var tooltip = {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        };
+        var plotOptions = {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        };
+        var credits = {
+            enabled: false
+        };
+
+        var series = [{
+            name: '2017.03',
+            data: [5432, 3111, 4222, 3444]
+        }, {
+            name: '2018.03',
+            data: [6543, 3011, 3133, 2544]
+        }];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.tooltip = tooltip;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.series = series;
+        json.plotOptions = plotOptions;
+        json.credits = credits;
+        $('#container2').highcharts(json);
+
+    });
+    $(document).ready(function () {
+        var title = {
+            text: 'EAST大数据分析平台'
+        };
+        var subtitle = {
+            text: 'Highcharts 曲线图'
+        };
+        var x
+        var xAxis = {
+            categories: ['01月', '02月', '03月', '04月', '05月', '06月', '07月']
+        };
+        var yAxis = {
+            title: {
+                text: 'Temperature (\xB0C)'
+            }
+        };
+        var plotOptions = {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        };
+        var series = [{
+            name: '累计发放额',
+            data: [2333, 3111, 2222, 2444, 3523, 3556, 2555]
+        }];
+        var json = {};
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.series = series;
+        json.plotOptions = plotOptions;
+        $('#container3').highcharts(json);
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>任务管理-任务定义-成员维护</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="stylesheet" href="css/bootstrapStyle/bootstrapStyle.css" type="text/css">
+    <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
+</head>
+<body style="padding: 0px 10px;">
+<div class="layui-tab layui-tab-brief clearMargin">
+    <ul class="layui-tab-title">
+        <li class="layui-this">规则</li>
+        <li>指标</li>
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+            <table width="420" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td width="180" valign="top">
+                        <ul id="treeDemo" class="ztree cywhArea"></ul>
+                    </td>
+                    <td width="60" align="center">
+                        <button class="layui-btn layui-btn-sm layui-btn-primary changeCywhBtn"><i class="fa fa-check"></i>选取</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-primary changeCywhBtn"><i class="fa fa-minus"></i>移除</button>
+                    </td>
+                    <td width="180" valign="top">
+                        <div class="cywhArea"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="layui-tab-item"><p style="height: 296px; line-height: 296px; text-align: center">指标内容</p></div>
+    </div>
+</div>
+
+<div align="right">
+    <button class="layui-btn layui-btn-sm layui-btn-primary cancel">取消</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal" lay-submit>保存</button>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.exedit.js"></script>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="rwdy.js"></script>
+<script>
+    layui.use(['element', 'layer'], function () {
+        var layer = layui.layer,
+            element = layui.layer,
+            $ = layui.jquery;
+        var index = parent.layer.getFrameIndex(window.name);
+        $(".cancel").click(function () {
+            console.log(index);
+            parent.layer.close(index);
+        })
+    });
+
+</script>
+<SCRIPT type="text/javascript">
+    var setting = {
+        view: {
+            addHoverDom: addHoverDom,
+            removeHoverDom: removeHoverDom,
+            selectedMulti: false
+        },
+        check: {
+            enable: true
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        edit: {
+            enable: true
+        }
+    };
+
+    var zNodes = [{
+        id: 1,
+        pId: 0,
+        name: "财务部",
+        open: true,
+        tag: 11
+    }, {
+        id: 11,
+        pId: 1,
+        name: "张三"
+    }, {
+        id: 12,
+        pId: 1,
+        name: "李四"
+    }, {
+        id: 13,
+        pId: 1,
+        name: "王五"
+    }, {
+        id: 14,
+        pId: 1,
+        name: "张三"
+    }, {
+        id: 15,
+        pId: 1,
+        name: "李四"
+    }, {
+        id: 16,
+        pId: 1,
+        name: "王五"
+    }, {
+        id: 17,
+        pId: 1,
+        name: "张三"
+    }
+    ];
+
+    $(document).ready(function () {
+        $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+    });
+
+    var newCount = 1;
+
+    function addHoverDom(treeId, treeNode) {
+        var sObj = $("#" + treeNode.tId + "_span");
+        if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+        var addStr = "<span class='button add' id='addBtn_" + treeNode.tId +
+            "' title='add node' onfocus='this.blur();'></span>";
+        sObj.after(addStr);
+        var btn = $("#addBtn_" + treeNode.tId);
+        if (btn) btn.bind("click", function () {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            zTree.addNodes(treeNode, {
+                id: (100 + newCount),
+                pId: treeNode.id,
+                name: "new node" + (newCount++)
+            });
+            return false;
+        });
+    };
+
+    function removeHoverDom(treeId, treeNode) {
+        $("#addBtn_" + treeNode.tId).unbind().remove();
+    };
+    //-->
+</SCRIPT>
+</body>
+</html>

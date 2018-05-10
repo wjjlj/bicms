@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>任务管理-任务定义-新建</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+</head>
+<body class="childrenBody" style="padding: 20px">
+<form class="layui-form linksAdd">
+	<div class="layui-form-item">
+		<label class="layui-form-label"><span class="requiredIcon">*</span>名称</label>
+		<div class="layui-input-block">
+			<input type="text" class="layui-input" lay-verify="required"/>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label"><span class="requiredIcon">*</span>优先级</label>
+		<div class="layui-input-block">
+			<input type="text" class="layui-input" lay-verify="required"/>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">执行频度</label>
+		<div class="layui-input-block">
+			<select name="">
+				<option value="1">执行一次</option>
+				<option value="2">每周一次</option>
+				<option value="3">每月一次</option>
+				<option value="4">每季度一次</option>
+				<option value="5">每半年一次</option>
+				<option value="6">每年一次</option>
+			</select>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label"><span class="requiredIcon">*</span>开始执行时间</label>
+		<div class="layui-input-block">
+			<input type="text" class="layui-input" lay-verify="required" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">描述</label>
+		<div class="layui-input-block">
+			<textarea name="desc" class="layui-textarea"></textarea>
+		</div>
+	</div>
+
+	<div align="right">
+		<button class="layui-btn layui-btn-sm layui-btn-primary cancel">取消</button>
+		<button class="layui-btn layui-btn-sm layui-btn-normal" lay-submit>保存</button>
+	</div>
+</form>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="rwdy.js"></script>
+<script>
+	layui.use(['layer'],function(){
+	    var layer = layui.layer,
+        	$ = layui.jquery;
+        var index = parent.layer.getFrameIndex(window.name);
+		$(".cancel").click(function () {
+            parent.layer.close(index);
+        })
+	});
+</script>
+</body>
+</html>
