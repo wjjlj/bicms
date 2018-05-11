@@ -22,11 +22,6 @@ function inputFocus() {
             this.style.background = 'url(images/pass-txt.png) no-repeat left center';
         }
     }
-
-    if (user.value == "") {
-        alert('hello world');
-
-    }
 }
 
 function formCheck() {

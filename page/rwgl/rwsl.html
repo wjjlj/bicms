@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>任务管理-任务定义</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
+</head>
+<body class="childrenBody changeTable changeSpace">
+<form class="layui-form">
+    <div class="layui-form-item">
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input searchVal" placeholder="名称"/>
+        </div>
+        <div class="layui-input-inline">
+            <select name="" lay-verify="">
+                <option value="">任务类型</option>
+                <option value="1">全部</option>
+                <option value="2">手动任务</option>
+                <option value="2">自动任务</option>
+            </select>
+        </div>
+        <div class="layui-input-inline">
+            <select name="" lay-verify="">
+                <option value="">状态</option>
+                <option value="1">等待运行</option>
+                <option value="2">正在运行</option>
+                <option value="3">正在停止</option>
+                <option value="4">停止运动</option>
+                <option value="5">运行成功</option>
+                <option value="6">运行失败</option>
+            </select>
+        </div>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="time1" placeholder="提交时间"/>
+        </div>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="time2" placeholder="结束时间"/>
+        </div>
+        <a class="layui-btn layui-btn-normal search_btn"><i class="fa fa-search"></i>搜索</a>
+    </div>
+</form>
+<div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-user"></i>任务成员</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-pause"></i>中止任务</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-play"></i>继续任务</button>
+    <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-trash-o"></i>删除任务</button>
+</div>
+<table id="linkList" lay-filter="linkList"></table>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="rwsl.js"></script>
+</body>
+</html>

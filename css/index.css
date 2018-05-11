@@ -65,7 +65,7 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 .topLevelMenus .layui-nav-item i.icon_rwgl {background: url(../images/icon_rwgl.png) no-repeat center center;}
 .topLevelMenus .layui-nav-item i.icon_404 {background: url(../images/icon_404.png) no-repeat center center;}
 .layui-nav .layui-this:after{ bottom:-5px!important;}
-.header .layui-nav-bar{top:-5px !important;}
+.header .layui-nav-bar{display: none !important;}
 .topLevelMenus .layui-nav-item.layui-this{ background-color:rgba(0,0,0,0.15);}
 .top_menu.layui-nav .layui-this:after{ width:0px; }
 .top_menu .layui-nav-bar,.mobileTopLevelMenus .layui-nav-bar{background-color:rgba(0,0,0,0.7);}
@@ -199,7 +199,7 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 	background-color: #f0f2f7 !important;
 }
 .main_body.changeIndex .layui-nav-tree .layui-this 	{
-	background-color: #3498db;
+	background-color: transparent;
 }
 .main_body.changeIndex .layui-bg-diy .layui-nav .layui-nav-item a {
 	color: #3d4d66;
@@ -210,7 +210,25 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 }
 .main_body.changeIndex .layui-nav-tree .layui-nav-bar {
 	background-color: #3498db ;
+	display: none;
 }
 .main_body.changeIndex .layui-nav-tree .layui-nav-item a:hover {
 	background-color: #d8e6f3;
 }
+.main_body.changeIndex .layui-nav.layui-nav-tree {
+	margin-top: 10px;
+}
+.main_body.changeIndex .layui-nav-tree .layui-nav-item a {
+	height: 36px;
+	line-height: 36px;
+	margin: 5px 10px;
+	border-radius: 5px;
+}
+
+
+
+
+
+
+
+

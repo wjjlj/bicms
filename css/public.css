@@ -268,7 +268,10 @@ h2.method{ font-size:18px; line-height:45px; padding-left:5px;}
 }
 /* 改变搜索区域下边距 */
 .childrenBody.changeSpace .layui-form-item {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+.childrenBody.changeSpace .layui-form-item .layui-input-inline {
+    margin-bottom: 5px;
 }
 /* 改变按钮区域默认边距 */
 .childrenBody.changeSpace .layui-btn-container {

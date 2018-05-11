@@ -6,14 +6,13 @@ layui.use(['form', 'layer', 'table'], function () {
 
     //搜索列表
     table.render({
-        elem: '#newsList',
-        url: 'yhhxList.json',
+        elem: '#yhhxYhzwxx',
+        url: 'yhhxYhzwxx.json',
         cellMinWidth: 95,
         page: true,
         height: "full-68",
         limit: 20,
         limits: [10, 15, 20, 25],
-        id: "newsListTable",
         cols: [[
             {field: 'yhhxId', title: '金融许可证号', align: "center"},
             {field: 'yhhxName', title: '银行机构名称', align: "center"},
