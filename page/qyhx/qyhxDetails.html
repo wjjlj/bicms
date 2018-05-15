@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../../css/public.css" media="all"/>
     <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
 </head>
-<body class="childrenBody changeTable changeTab">
+<body class="childrenBody changeTable changeSpace changeTab">
 
 <div class="layui-tab">
     <ul class="layui-tab-title">
@@ -26,7 +26,7 @@
         <li>担保信息</li>
         <li>负面信息</li>
     </ul>
-    <div class="layui-tab-content" style="height: 100%">
+    <div class="layui-tab-content">
         <div class="layui-tab-item layui-show">
             <div class="qyimgJbxx">
                 <p class="xtitle">所在银行机构</p>
@@ -106,9 +106,28 @@
                 </table>
             </div>
         </div>
-        <div class="layui-tab-item">关联关系</div>
-        <div class="layui-tab-item">事件信息</div>
-        <div class="layui-tab-item">资产信息</div>
+        <div class="layui-tab-item">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <div class="layui-input-inline">
+                        <select name="city" lay-verify="">
+                            <option value="1">展开一级</option>
+                            <option value="2">展开二级</option>
+                            <option value="3">展开二级</option>
+                        </select>
+                    </div>
+                    <a class="layui-btn layui-btn-normal search_btn" data-type="reload"><i class="fa fa-mail-forward"></i>导出</a>
+                </div>
+            </form>
+            <div id="glgx"></div>
+        </div>
+        <div class="layui-tab-item" id="sjxx"></div>
+        <div class="layui-tab-item">
+            <div class="layui-row layui-col-space30">
+                <div class="layui-col-md6" id="zcxx1">表一资产信息</div>
+                <div class="layui-col-md6" id="zcxx2">表二资产信息</div>
+            </div>
+        </div>
         <div class="layui-tab-item">
             <div class="layui-tab">
                 <ul class="layui-tab-title">
@@ -121,97 +140,130 @@
                     <li>信贷业务质或抵押物</li>
                 </ul>
                 <div class="layui-tab-content" style="padding: 10px 0">
-                    <div class="layui-tab-item layui-show" id="container3"></div>
+                    <div class="layui-tab-item layui-show" id="xdxxDkjj"></div>
                     <div class="layui-tab-item">
-                        <table id="xdxxList"></table>
+                        <table id="qyhxXdxx_dkzq" lay-filter="qyhxXdxx_dkzq"></table>
                     </div>
-                    <div class="layui-tab-item">贷款核销</div>
-                    <div class="layui-tab-item">授信情况</div>
-                    <div class="layui-tab-item">委托贷款</div>
-                    <div class="layui-tab-item">银团贷款</div>
-                    <div class="layui-tab-item">信贷业务质或抵押物</div>
+                    <div class="layui-tab-item">
+                        <table id="qyhxXdxx_dkhx" lay-filter="qyhxXdxx_dkhx"></table>
+                    </div>
+                    <div class="layui-tab-item" id="xdxxSxqk"></div>
+                    <div class="layui-tab-item">
+                        <table id="qyhxXdxx_wtdk" lay-filter="qyhxXdxx_wtdk"></table>
+                    </div>
+                    <div class="layui-tab-item">
+                        <table id="qyhxXdxx_ytdk" lay-filter="qyhxXdxx_ytdk"></table>
+                    </div>
+                    <div class="layui-tab-item">
+                        <table id="qyhxXdxx_xdyw" lay-filter="qyhxXdxx_xdyw"></table>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="layui-tab-item">流水分析</div>
-        <div class="layui-tab-item">担保信息</div>
-        <div class="layui-tab-item">负面信息</div>
+        <div class="layui-tab-item" id="lsfx">流水分析</div>
+        <div class="layui-tab-item">
+            <table id="qyhxDbxx" lay-filter="qyhxDbxx"></table>
+        </div>
+        <div class="layui-tab-item">
+            <div class="layui-collapse">
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">法院失信信息</h2>
+                    <div class="layui-colla-content layui-show">内容区域</div>
+                </div>
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">工商处罚信息</h2>
+                    <div class="layui-colla-content layui-show">内容区域</div>
+                </div>
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">环保失信信息</h2>
+                    <div class="layui-colla-content layui-show">内容区域</div>
+                </div>
+                <div class="layui-colla-item">
+                    <h2 class="layui-colla-title">网络负面舆论</h2>
+                    <div class="layui-colla-content layui-show">内容区域</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script type="text/javascript" src="../../layui/layui.js"></script>
-<script type="text/javascript" src="xdxxList.js"></script>
-<script type="text/javascript" src="qyhxList.js"></script>
+<script type="text/javascript" src="qyhxDetails.js"></script>
 <script src="../../js/jquery.min.js"></script>
 <script src="../../js/highcharts.js"></script>
 <script src="../../js/highcharts-3d.js"></script>
 <script>
-    $(document).ready(function () {
-        var chart = {
-            type: 'column'
-        };
-        var title = {
-            text: 'EAST大数据分析平台'
-        };
-        var subtitle = {
-            text: 'Highcharts 柱形图'
-        };
-        var xAxis = {
-            categories: ['贷款业务', '自营贷款', '票据贴现', '票据承兑'],
-            crosshair: true
-        };
-        var yAxis = {
-            min: 0,
-            title: {
-                text: '单位：亿元'
-            },
-            stackLabels: {
-                enabled: true,
-                style: {
-                    fontWeight: 'bold',
-                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                }
+$(function(){
+    var chart = {
+        type: 'column'
+    };
+    var title = {
+        text: 'EAST大数据分析平台（演示）'
+    };
+    var subtitle = {
+        text: 'Highcharts 柱形图'
+    };
+    var xAxis = {
+        categories: ['贷款业务', '自营贷款', '票据贴现', '票据承兑'],
+        crosshair: true
+    };
+    var yAxis = {
+        min: 0,
+        title: {
+            text: '单位：亿元'
+        },
+        stackLabels: {
+            enabled: true,
+            style: {
+                fontWeight: 'bold',
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
             }
-        };
-        var tooltip = {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y}</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        };
-        var plotOptions = {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        };
-        // var credits = {
-        //     enabled: false
-        // };
+        }
+    };
+    var tooltip = {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        '<td style="padding:0"><b>{point.y}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    };
+    var plotOptions = {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    };
+    var credits = {
+        enabled: false
+    };
 
-        var series = [{
-            name: '2017.03',
-            data: [5432, 3111, 4222, 3444]
-        }, {
-            name: '2018.03',
-            data: [6543, 3011, 3133, 2544]
-        }];
+    var series = [{
+        name: '2017.03',
+        data: [5432, 3111, 4222, 3444]
+    }, {
+        name: '2018.03',
+        data: [6543, 3011, 3133, 2544]
+    }];
 
-        var json = {};
-        json.chart = chart;
-        json.title = title;
-        json.subtitle = subtitle;
-        json.tooltip = tooltip;
-        json.xAxis = xAxis;
-        json.yAxis = yAxis;
-        json.series = series;
-        json.plotOptions = plotOptions;
-        // json.credits = credits;
-        $('#container3').highcharts(json);
-
-    });
+    var json = {};
+    json.chart = chart;
+    json.title = title;
+    json.subtitle = subtitle;
+    json.tooltip = tooltip;
+    json.xAxis = xAxis;
+    json.yAxis = yAxis;
+    json.series = series;
+    json.plotOptions = plotOptions;
+    json.credits = credits;
+    $('#xdxxDkjj').highcharts(json);
+    $('#xdxxSxqk').highcharts(json);
+    $('#lsfx').highcharts(json);
+    $('#glgx').highcharts(json);
+    $('#sjxx').highcharts(json);
+    $('#zcxx1').highcharts(json);
+    $('#zcxx2').highcharts(json);
+})
 </script>
 </body>
 </html>

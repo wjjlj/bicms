@@ -1,4 +1,5 @@
 /*公共样式*/
+cite { font-style: unset;}
 .childrenBody{ padding:10px;}
 .layui-table-view{ margin:0 !important;}
 .magb0{margin-bottom:0 !important;}
@@ -391,6 +392,7 @@ table.qyimg td {
     color: #ffffff;
 }
 .catalog {
+    height: 100%;
     border: 1px solid #3498db;
     overflow: auto;
 }
@@ -432,4 +434,45 @@ table.qyimg td {
     padding: 5px;
     box-sizing: border-box;
     overflow: auto;
+}
+/*更改手风琴样式*/
+.childrenBody.changeTable .layui-collapse {
+    border-color: #e4ebf7;
+}
+.childrenBody.changeTable .layui-colla-item {
+    border-color: #e4ebf7;
+}
+.childrenBody.changeTable .layui-colla-title {
+    height: 40px;
+    line-height: 40px;
+    background-color: #e4ebf7;
+}
+.childrenBody.changeTable .layui-colla-content {
+    border-color: #e4ebf7;
+}
+/*自定义表格样式*/
+table.ys1 {
+    color: #333;
+    font-family: Microsoft YaHei;
+    border-collapse: collapse;
+}
+table.ys1 th {
+    font-size: 13px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0px 5px;
+    border-bottom: 1px solid #e1e7f0;
+    background-color: #f2f6fc;
+}
+table.ys1 td {
+    font-size: 13px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0px 5px;
+    border-top: 1px solid #e1e7f0;
+    border-bottom: 1px solid #e1e7f0;
+}
+table.ys1 td.cz a {
+    color: #3498db;
+    margin: 0 5px;
 }

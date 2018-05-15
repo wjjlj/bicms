@@ -6,7 +6,12 @@ layui.use(['form','layer','laydate','table','upload'],function(){
         upload = layui.upload,
         table = layui.table;
 
-    //表格列表
+    //点击添加页卡
+    $(".rwcy").click(function () {
+        parent.tab.tabAdd($(this));
+    });
+
+    //任务实例表格列表
     var tableIns = table.render({
         elem: '#linkList',
         url : 'rwsl.json',
@@ -26,52 +31,78 @@ layui.use(['form','layer','laydate','table','upload'],function(){
             {field: 't6', title: '开始时间', width:130, align:'center'},
             {field: 't7', title: '结束时间', width:130, align:'center'},
             {field: 't8', title: '状态', width:100, align:'center'},
-            {field: 't9', title: '操作', width:160, align:'center', templet:function(){
-                    return '<a href="javascript:;" style="margin-right: 10px;color:#3498db"><i class="fa fa-pencil"></i> 修改</a><a href="javascript:;" lay-event="del" style="color:#3498db"><i class="fa fa-trash-o"></i> 删除</a>';
-            }}
+            {title: '操作', width:130, templet:'#linkListBar', align:'center'}
         ]]
     });
 
-    //搜索
+    //任务成员表格列表
+    table.render({
+        elem: '#linkRwcy',
+        url : 'rwcy.json',
+        page : true,
+        cellMinWidth : 95,
+        height : "full-108",
+        limit : 20,
+        limits : [10,15,20,25],
+        cols : [[
+            {type: "checkbox", width:50},
+            {field: 't1', title: '名称', align:'left'},
+            {field: 't2', title: '类型', align:'center'},
+            {field: 't3', title: '数据源', align:'center'},
+            {field: 't4', title: '运行状态', align:'center'},
+            {field: 't5', title: '开始时间', align:'center'},
+            {field: 't6', title: '结束时间', align:'center'},
+            {title: '操作', width:200, templet:'#linkRwcyBar', align:'center'}
+        ]]
+    });
+
+    //搜索任务实例
     $(".search_btn").on("click",function(){
         if($(".searchVal").val() == ''){
             layer.msg("请输入搜索的内容");
         }
     });
 
-    //添加新建
-    function newBuild(){
+    //搜索任务成员
+    $(".search_btnRwcy").on("click",function(){
+        if($(".ztVal").val() == ''){
+            layer.msg("请输入搜索的内容");
+        }
+    });
+
+    //任务成员查看日志
+    function rwcyCkrz(){
         var index = layer.open({
-            title : "新建",
+            title : "查看日志",
             type : 2,
-            area : ["400px","440px"],
-            content: ['/bicms/page/rwgl/rwdyNew.html', 'no']
+            area : ["620px","440px"],
+            content: ['/bicms/page/rwgl/rwcyCkrz.html']
         })
     }
-    $(".btnNew").click(function(){
-        newBuild();
-    })
+    $(".btnCkrz").click(function(){
+        rwcyCkrz();
+    });
 
-    //添加成员维护
-    function rwdyCywh(){
-        var index = layer.open({
-            title : "成员维护",
-            type : 2,
-            area : ["440px","440px"],
-            content: ['/bicms/page/rwgl/rwdyCywh.html', 'no']
-        })
-    }
-    $(".btnCywh").click(function(){
-        rwdyCywh();
-    })
-
-    //列表操作
+    //任务实例列表操作
     table.on('tool(linkList)', function(obj){
         var layEvent = obj.event,
             data = obj.data;
 
-        if(layEvent === 'del'){ //删除
-            layer.confirm('确定删除此记录吗？',{icon:3, title:'提示信息'});
+        if (layEvent === 'rwcy') { //详情
+            parent.tab.tabAdd($(this));
+        }
+    });
+
+    //任务成员列表操作
+    table.on('tool(linkRwcy)', function(obj){
+        var layEvent = obj.event,
+            data = obj.data;
+
+        if (layEvent === 'eventCx') { //详情
+            layer.open({
+                title: '参数'
+                ,content: '任务成员事件'
+            });
         }
     });
 

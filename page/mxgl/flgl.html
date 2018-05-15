@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
 <head>
     <meta charset="utf-8">
     <title>模型管理分类管理</title>
@@ -11,14 +11,225 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
     <link rel="stylesheet" href="../../css/public.css" media="all"/>
+    <link rel="stylesheet" href="css/bootstrapStyle/bootstrapStyle.css" type="text/css">
     <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
 </head>
-<body class="childrenBody">
-
-<fieldset class="layui-elem-field layui-field-title">
-    <legend>暂无内容</legend>
-</fieldset>
-
+<body class="childrenBody changeTable changeSpace" style="height: 100%;">
+<div class="layui-row layui-col-space10">
+    <div class="layui-col-xs2">
+        <p class="catalogTitle">目录管理</p>
+        <ul id="treeDemo" class="ztree catalog" style="height: 100%;"></ul>
+    </div>
+    <div class="layui-col-xs10">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input searchVal" placeholder="模型名称"/>
+                </div>
+                <div class="layui-input-inline">
+                    <select name="city" lay-verify="">
+                        <option value="">查询范围</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <select name="city" lay-verify="">
+                        <option value="">审批状态</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <select name="city" lay-verify="">
+                        <option value="">启用状态</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <a class="layui-btn layui-btn-normal search_btn" data-type="reload"><i class="fa fa-search"></i>搜索</a>
+            </div>
+        </form>
+        <div class="layui-btn-container">
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal addLink_btn"><i class="fa fa-folder-o"></i>新建</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-pencil"></i>修改信息</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-pencil"></i>修改模型</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-trash-o"></i>删除</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-trash-o"></i>强制删除</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-clipboard"></i>调整分类</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-check-square-o"></i>提交审批</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-commenting"></i>审批意见</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-file-o"></i>结果展示配置</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-mail-forward"></i>导出</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-mail-reply "></i>导入</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-handshake-o"></i>共享</button>
+        </div>
+        <table id="linkList" lay-filter="linkList"></table>
+    </div>
+</div>
 <script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.exedit.js"></script>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="flgl.js"></script>
+<SCRIPT type="text/javascript">
+    var setting = {
+        view: {
+            addHoverDom: addHoverDom,
+            removeHoverDom: removeHoverDom,
+            selectedMulti: false
+        },
+        check: {
+            enable: true
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        edit: {
+            enable: true
+        }
+    };
+
+    var zNodes = [{
+        id: 1,
+        pId: 0,
+        name: "模型分类",
+        open: true,
+        tag: 11
+    }, {
+        id: 11,
+        pId: 1,
+        name: "消费贷检查"
+    }, {
+        id: 12,
+        pId: 1,
+        name: "演示"
+    }, {
+        id: 13,
+        pId: 1,
+        name: "授信类"
+    }, {
+        id: 14,
+        pId: 1,
+        name: "其他类"
+    }, {
+        id: 15,
+        pId: 1,
+        name: "反洗钱类"
+    }, {
+        id: 16,
+        pId: 1,
+        name: "柜员操作类"
+    }, {
+        id: 17,
+        pId: 1,
+        name: "网络指标"
+    }, {
+        id: 2,
+        pId: 0,
+        name: "模型分类",
+        open: true,
+        tag: 11
+    }, {
+        id: 21,
+        pId: 2,
+        name: "消费贷检查"
+    }, {
+        id: 22,
+        pId: 2,
+        name: "演示"
+    }, {
+        id: 23,
+        pId: 2,
+        name: "授信类"
+    }, {
+        id: 24,
+        pId: 2,
+        name: "其他类"
+    }, {
+        id: 25,
+        pId: 2,
+        name: "反洗钱类"
+    }, {
+        id: 26,
+        pId: 2,
+        name: "柜员操作类"
+    }, {
+        id: 27,
+        pId: 2,
+        name: "网络指标"
+    }, {
+        id: 3,
+        pId: 0,
+        name: "模型分类",
+        open: true,
+        tag: 11
+    }, {
+        id: 31,
+        pId: 3,
+        name: "消费贷检查"
+    }, {
+        id: 32,
+        pId: 3,
+        name: "演示"
+    }, {
+        id: 33,
+        pId: 3,
+        name: "授信类"
+    }, {
+        id: 34,
+        pId: 3,
+        name: "其他类"
+    }, {
+        id: 35,
+        pId: 3,
+        name: "反洗钱类"
+    }, {
+        id: 36,
+        pId: 3,
+        name: "柜员操作类"
+    }, {
+        id: 37,
+        pId: 3,
+        name: "网络指标"
+    }
+    ];
+
+    $(document).ready(function () {
+        $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+    });
+
+    var newCount = 1;
+
+    function addHoverDom(treeId, treeNode) {
+        var sObj = $("#" + treeNode.tId + "_span");
+        if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+        var addStr = "<span class='button add' id='addBtn_" + treeNode.tId +
+            "' title='add node' onfocus='this.blur();'></span>";
+        sObj.after(addStr);
+        var btn = $("#addBtn_" + treeNode.tId);
+        if (btn) btn.bind("click", function () {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            zTree.addNodes(treeNode, {
+                id: (100 + newCount),
+                pId: treeNode.id,
+                name: "new node" + (newCount++)
+            });
+            return false;
+        });
+    };
+
+    function removeHoverDom(treeId, treeNode) {
+        $("#addBtn_" + treeNode.tId).unbind().remove();
+    };
+    //-->
+</SCRIPT>
 </body>
 </html>

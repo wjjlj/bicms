@@ -32,6 +32,21 @@ layui.use(['form','layer','laydate','table','upload'],function(){
         ]]
     });
 
+    //内部顺序调整
+    table.render({
+        elem: '#rwdyNbsxtz',
+        url : 'rwdyNbsxtz.json',
+        page : true,
+        cellMinWidth : 95,
+        limit : 20,
+        limits : [10,15,20,25],
+        cols : [[
+            {field: 't1', title: '名称', align:'center'},
+            {field: 't2', title: '类型', align:'center'},
+            {field: 't3', title: '操作', align:'center'},
+        ]]
+    });
+
     //搜索
     $(".search_btn").on("click",function(){
         if($(".searchVal").val() == ''){
@@ -50,7 +65,7 @@ layui.use(['form','layer','laydate','table','upload'],function(){
     }
     $(".btnNew").click(function(){
         newBuild();
-    })
+    });
 
     //添加成员维护
     function rwdyCywh(){
@@ -63,7 +78,20 @@ layui.use(['form','layer','laydate','table','upload'],function(){
     }
     $(".btnCywh").click(function(){
         rwdyCywh();
-    })
+    });
+
+    //内部顺序调整
+    function rwdyNbsxtz(){
+        var index = layer.open({
+            title : "内部顺序调整",
+            type : 2,
+            area : ["440px","440px"],
+            content: ['/bicms/page/rwgl/rwdyNbsxtz.html']
+        })
+    }
+    $(".btnNbsxtz").click(function(){
+        rwdyNbsxtz();
+    });
 
     //列表操作
     table.on('tool(linkList)', function(obj){

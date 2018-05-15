@@ -64,23 +64,65 @@
                 </tbody>
             </table>
         </div>
-        <div class="layui-tab-item">股东关系</div>
-        <div class="layui-tab-item">同业信息</div>
-        <div class="layui-tab-item">存款信息</div>
-        <div class="layui-tab-item">贷款信息</div>
-        <div class="layui-tab-item">不良贷款率</div>
-        <div class="layui-tab-item">关注类贷款向下迁徙率</div>
-        <div class="layui-tab-item">存贷比</div>
+        <div class="layui-tab-item">
+            <table id="yhhxGdgx" lay-filter="yhhxGdgx"></table>
+        </div>
+        <div class="layui-tab-item">
+            <table id="yhhxTyxx" lay-filter="yhhxTyxx"></table>
+        </div>
+        <div class="layui-tab-item">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-col-md8 layui-col-md-offset2" id="a6"></div>
+            </div>
+        </div>
+        <div class="layui-tab-item">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-col-md6" id="a5"></div>
+                <div class="layui-col-md6" id="a4"></div>
+            </div>
+        </div>
+        <div class="layui-tab-item">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-col-md8 layui-col-md-offset2" id="a3"></div>
+            </div>
+        </div>
+        <div class="layui-tab-item">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-col-md8 layui-col-md-offset2" id="a2"></div>
+            </div>
+        </div>
+        <div class="layui-tab-item">
+            <div class="layui-row layui-col-space10">
+                <div class="layui-col-md8 layui-col-md-offset2" id="a1"></div>
+            </div>
+        </div>
         <div class="layui-tab-item">
             <form class="layui-form">
                 <div class="layui-form-item">
+                    <label class="layui-form-label" style="width: auto">分支行：</label>
                     <div class="layui-input-inline">
-                        <input type="text" class="layui-input searchVala" placeholder="金融许可证号"/>
+                        <select name="" lay-verify="" lay-search>
+                            <option value="">直接选择或搜索选择</option>
+                            <option value="1">...</option>
+                            <option value="2">...</option>
+                        </select>
                     </div>
+                    <label class="layui-form-label" style="width: auto">金融许可证号：</label>
                     <div class="layui-input-inline">
-                        <input type="text" class="layui-input searchValb" placeholder="银行机构名称"/>
+                        <select name="" lay-verify="" lay-search>
+                            <option value="">直接选择或搜索选择</option>
+                            <option value="1">...</option>
+                            <option value="2">...</option>
+                        </select>
                     </div>
-                    <a class="layui-btn layui-btn-normal search_btn"><i class="fa fa-search"></i>搜索</a>
+                    <label class="layui-form-label" style="width: auto">职位：</label>
+                    <div class="layui-input-inline">
+                        <select name="" lay-verify="" lay-search>
+                            <option value="">直接选择或搜索选择</option>
+                            <option value="1">...</option>
+                            <option value="2">...</option>
+                        </select>
+                    </div>
                 </div>
             </form>
             <table id="yhhxYhzwxx" lay-filter="yhhxYhzwxx"></table>
@@ -94,9 +136,6 @@
 <script src="../../js/highcharts.js"></script>
 <script src="../../js/highcharts-3d.js"></script>
 <script>
-    layui.use('element', function () {
-        var element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
-    });
     $(document).ready(function () {
         var chart = {
             type: 'pie',
@@ -151,6 +190,7 @@
         json.plotOptions = plotOptions;
         json.series = series;
         $('#container0').highcharts(json);
+        $('#a5').highcharts(json);
     });
     $(document).ready(function () {
         var chart = {
@@ -203,6 +243,7 @@
         json.plotOptions = plotOptions;
         json.series = series;
         $('#container1').highcharts(json);
+        $('#a4').highcharts(json);
     });
     $(document).ready(function () {
         var chart = {
@@ -268,7 +309,7 @@
         json.plotOptions = plotOptions;
         json.credits = credits;
         $('#container2').highcharts(json);
-
+        $('#a6').highcharts(json);
     });
     $(document).ready(function () {
         var title = {
@@ -306,7 +347,9 @@
         json.series = series;
         json.plotOptions = plotOptions;
         $('#container3').highcharts(json);
-
+        $('#a1').highcharts(json);
+        $('#a2').highcharts(json);
+        $('#a3').highcharts(json);
     });
 </script>
 </body>
