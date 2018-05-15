@@ -460,7 +460,7 @@ table.ys1 th {
     font-size: 13px;
     height: 35px;
     line-height: 35px;
-    padding: 0px 5px;
+    padding: 0px 10px;
     border-bottom: 1px solid #e1e7f0;
     background-color: #f2f6fc;
 }
@@ -468,9 +468,12 @@ table.ys1 td {
     font-size: 13px;
     height: 35px;
     line-height: 35px;
-    padding: 0px 5px;
+    padding: 0px 10px;
     border-top: 1px solid #e1e7f0;
     border-bottom: 1px solid #e1e7f0;
+}
+table.ys1 td.notext {
+    padding: 5px;
 }
 table.ys1 td.cz a {
     color: #3498db;

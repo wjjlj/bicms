@@ -80,13 +80,26 @@ layui.use(['form','layer','laydate','table','upload'],function(){
         rwdyCywh();
     });
 
+    //添加参数设置
+    function rwdyCssz(){
+        var index = layer.open({
+            title : "参数设置",
+            type : 2,
+            area: ["500px","400px"],
+            content: '/bicms/page/rwgl/rwdyCssz.html'
+        })
+    }
+    $(".btnCssz").click(function(){
+        rwdyCssz();
+    });
+
     //内部顺序调整
     function rwdyNbsxtz(){
         var index = layer.open({
             title : "内部顺序调整",
             type : 2,
-            area : ["440px","440px"],
-            content: ['/bicms/page/rwgl/rwdyNbsxtz.html']
+            area : ["440px","400px"],
+            content: '/bicms/page/rwgl/rwdyNbsxtz.html'
         })
     }
     $(".btnNbsxtz").click(function(){
