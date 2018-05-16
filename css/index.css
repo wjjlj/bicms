@@ -62,6 +62,7 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 .topLevelMenus .layui-nav-item i.icon_dbq {background: url(../images/icon_dbq.png) no-repeat center center;}
 .topLevelMenus .layui-nav-item i.icon_mxgl {background: url(../images/icon_mxgl.png) no-repeat center center;}
 .topLevelMenus .layui-nav-item i.icon_znfx {background: url(../images/icon_znfx.png) no-repeat center center;}
+.topLevelMenus .layui-nav-item i.icon_xtgl {background: url(../images/icon_xtgl.png) no-repeat center center;}
 .topLevelMenus .layui-nav-item i.icon_rwgl {background: url(../images/icon_rwgl.png) no-repeat center center;}
 .topLevelMenus .layui-nav-item i.icon_404 {background: url(../images/icon_404.png) no-repeat center center;}
 .layui-nav .layui-this:after{ bottom:-5px!important;}
@@ -223,6 +224,12 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 	line-height: 36px;
 	margin: 5px 10px;
 	border-radius: 5px;
+}
+.layui-nav.topLevelMenus {
+	padding-right: 0px;
+}
+.layui-nav.top_menu {
+	padding-right: 0px;
 }
 
 

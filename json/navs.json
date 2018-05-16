@@ -1,53 +1,4 @@
 {
-	"contentManagement": [
-		{
-			"title": "文章列表",
-			"icon": "icon-text",
-			"href": "//page/news/newsList.html",
-			"spread": false
-		},
-		{
-			"title": "图片管理",
-			"icon": "&#xe634;",
-			"href": "/page/img/images.html",
-			"spread": false
-		},
-		{
-			"title": "其他页面",
-			"icon": "&#xe630;",
-			"href": "",
-			"spread": false,
-			"children": [
-				{
-					"title": "404页面",
-					"icon": "&#xe61c;",
-					"href": "/page/404.html",
-					"spread": false
-				},
-				{
-					"title": "登录",
-					"icon": "&#xe609;",
-					"href": "/page/login/login.html",
-					"spread": false,
-					"target": "_blank"
-				}
-			]
-		}
-	],
-	"memberCenter": [
-		{
-			"title": "用户中心",
-			"icon": "&#xe612;",
-			"href": "/page/user/userList.html",
-			"spread": false
-		},
-		{
-			"title": "会员等级",
-			"icon": "icon-vip",
-			"href": "/page/user/userGrade.html",
-			"spread": false
-		}
-	],
 	"mxgl": [
 		{
 			"title": "分类管理",
@@ -65,8 +16,7 @@
 			"href": "/page/mxgl/mxsp.html",
 			"spread": false
 		}
-	],
-	"rwgl": [
+	],"rwgl": [
 		{
 			"title": "任务定义",
 			"icon": "&#xe63c; ",
@@ -78,25 +28,59 @@
 			"href": "/page/rwgl/rwsl.html",
 			"spread": false
 		}
-	],
-	"seraphApi": [
+	],"xtgl": [
 		{
-			"title": "三级联动模块",
-			"icon": "icon-mokuai",
-			"href": "/page/doc/addressDoc.html",
+			"title": "监管部门管理",
+			"icon": "&#xe63c; ",
+			"href": "/page/xtgl/jgbmgl.html",
 			"spread": false
 		},{
-			"title": "bodyTab模块",
-			"icon": "icon-mokuai",
-			"href": "/page/doc/bodyTabDoc.html",
+			"title": "用户管理",
+			"icon": "&#xe63c ",
+			"href": "###",
 			"spread": false
 		},{
-			"title": "三级菜单",
-			"icon": "icon-mokuai",
-			"href": "/page/doc/navDoc.html",
+			"title": "用户组管理",
+			"icon": "&#xe63c ",
+			"href": "###",
+			"spread": false
+		},{
+			"title": "机构管理",
+			"icon": "&#xe63c ",
+			"href": "###",
+			"spread": false
+		},{
+			"title": "资源管理",
+			"icon": "&#xe63c ",
+			"href": "###",
+			"spread": false
+		},{
+			"title": "虚拟机构管理",
+			"icon": "&#xe63c ",
+			"href": "###",
+			"spread": false
+		},{
+			"title": "角色管理",
+			"icon": "&#xe63c ",
+			"href": "###",
+			"spread": false
+		},{
+			"title": "展示模板管理",
+			"icon": "&#xe63c ",
+			"href": "###",
+			"spread": false
+		},{
+			"title": "日志管理",
+			"icon": "&#xe63c ",
+			"href": "###",
+			"spread": false
+		},{
+			"title": "字典管理",
+			"icon": "&#xe63c ",
+			"href": "###",
 			"spread": false
 		}
-	]
+]
 }
 
 
