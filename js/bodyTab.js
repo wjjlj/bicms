@@ -4,6 +4,11 @@
 	@Tittle: bodyTab
 	@Description: 点击对应按钮添加新窗口
 */
+//获取路径
+var pathName=window.document.location.pathname;
+//截取，得到项目名称
+var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+
 var tabFilter,menu=[],liIndex,curNav,delMenu,
     changeRefreshStr = window.sessionStorage.getItem("changeRefresh");
 layui.define(["element","jquery"],function(exports){
@@ -157,7 +162,7 @@ layui.define(["element","jquery"],function(exports){
 				title += '<i class="layui-icon layui-unselect layui-tab-close" data-id="'+tabIdIndex+'">&#x1006;</i>';
 				element.tabAdd(tabFilter, {
 			        title : title,
-			        content :"<iframe src='"+_this.attr("data-url")+"' data-id='"+tabIdIndex+"'></frame>",
+                    content :"<iframe src='"+projectName+""+_this.attr("data-url")+"' data-id='"+tabIdIndex+"'></frame>",
 			        id : new Date().getTime()
 			    })
 				//当前窗口内容

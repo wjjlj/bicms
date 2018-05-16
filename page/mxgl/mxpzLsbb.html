@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>模型配置-审批意见</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+</head>
+<body>
+<div class="popCon">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="ys1">
+		<tr>
+			<th align="center">版本号</th>
+			<th align="center">创建人</th>
+			<th align="center">创建时间</th>
+			<th align="center">操作</th>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td align="center">管理员</td>
+			<td align="center">2018-01-18 17:29:42</td>
+			<td align="center" class="cz">
+				<a href="javascript:;">查看模型</a>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td align="center">管理员</td>
+			<td align="center">2018-01-18 17:29:42</td>
+			<td align="center" class="cz">
+				<a href="javascript:;">查看模型</a>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">2</td>
+			<td align="center">管理员</td>
+			<td align="center">2018-01-18 17:29:42</td>
+			<td align="center" class="cz">
+				<a href="javascript:;">查看模型</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="popBtn" align="center">
+	<button class="layui-btn layui-btn-sm layui-btn-primary cancel">关闭</button>
+	<button class="layui-btn layui-btn-sm layui-btn-normal" lay-submit>保存</button>
+</div>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script type="text/javascript" src="rwdy.js"></script>
+<script>
+	layui.use(['layer'],function(){
+	    var layer = layui.layer,
+        	$ = layui.jquery;
+        var index = parent.layer.getFrameIndex(window.name);
+		$(".cancel").click(function () {
+            parent.layer.close(index);
+        })
+	});
+</script>
+</body>
+</html>

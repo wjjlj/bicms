@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>模型管理-模型配置-新建</title>
+    <title>模型管理-模型配置-修改</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,27 +17,23 @@
     <div class="layui-form-item">
         <label class="layui-form-label"><span class="requiredIcon">*</span>模型名称</label>
         <div class="layui-input-inline">
-            <input type="text" class="layui-input" lay-verify="required"/>
+            <input type="text" class="layui-input" lay-verify="required" value="短期内多账户划款到同一账户，并几乎全部支取或划转" />
         </div>
         <label class="layui-form-label">模型分类</label>
         <div class="layui-input-inline">
-            <input type="text" class="layui-input layui-disabled" placeholder="反洗钱类" disabled />
+            <input type="text" class="layui-input layui-disabled" value="反洗钱类" disabled />
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">数据源</label>
         <div class="layui-input-inline">
-            <select name="">
-                <option value=""></option>
-                <option value="0">湖北省法人行</option>
-                <option value="1">平安银行</option>
-            </select>
+            <input type="text" class="layui-input layui-disabled" value="EAST3.0" disabled />
         </div>
         <label class="layui-form-label">状态</label>
         <div class="layui-input-inline">
             <select name="">
                 <option value=""></option>
-                <option value="0">启用</option>
+                <option value="0" selected>启用</option>
                 <option value="1">禁用</option>
             </select>
         </div>
@@ -45,7 +41,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">描述</label>
         <div class="layui-input-inline">
-            <textarea name="desc" class="layui-textarea"></textarea>
+            <textarea name="desc" class="layui-textarea">短期内多账户划款到同一账户，并几乎全部支取或划转</textarea>
         </div>
         <label class="layui-form-label"><span class="requiredIcon">*</span>用途</label>
         <div class="layui-input-inline">
@@ -53,7 +49,6 @@
         </div>
     </div>
     <div align="center">
-        <button class="layui-btn layui-btn-sm layui-btn-normal" lay-filter="*" lay-submit>保存并设计模型</button>
         <button class="layui-btn layui-btn-sm layui-btn-normal" lay-filter="*" lay-submit>保存</button>
         <button class="layui-btn layui-btn-sm layui-btn-primary cancel">取消</button>
     </div>

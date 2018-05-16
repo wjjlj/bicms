@@ -271,6 +271,9 @@ h2.method{ font-size:18px; line-height:45px; padding-left:5px;}
 .childrenBody.changeSpace .layui-form-item {
     margin-bottom: 5px;
 }
+.childrenBody.changeSpace .layui-form-item .layui-inline {
+    margin-bottom: 0px;
+}
 .childrenBody.changeSpace .layui-form-item .layui-input-inline {
     margin-bottom: 5px;
 }
@@ -478,4 +481,18 @@ table.ys1 td.notext {
 table.ys1 td.cz a {
     color: #3498db;
     margin: 0 5px;
+}
+/*弹窗按钮定位*/
+.popBtn {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid #eeeeee;
+    background-color: #FFFFFF;
+}
+.popCon {
+    margin-bottom: 41px;
 }
