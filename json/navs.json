@@ -30,54 +30,14 @@
 		}
 	],"xtgl": [
 		{
-			"title": "监管部门管理",
+			"title": "列表整体",
 			"icon": "&#xe63c; ",
-			"href": "/page/xtgl/jgbmgl.html",
+			"href": "/page/xtgl/list.html",
 			"spread": false
 		},{
-			"title": "用户管理",
+			"title": "列表树整体",
 			"icon": "&#xe63c ",
-			"href": "###",
-			"spread": false
-		},{
-			"title": "用户组管理",
-			"icon": "&#xe63c ",
-			"href": "###",
-			"spread": false
-		},{
-			"title": "机构管理",
-			"icon": "&#xe63c ",
-			"href": "###",
-			"spread": false
-		},{
-			"title": "资源管理",
-			"icon": "&#xe63c ",
-			"href": "###",
-			"spread": false
-		},{
-			"title": "虚拟机构管理",
-			"icon": "&#xe63c ",
-			"href": "###",
-			"spread": false
-		},{
-			"title": "角色管理",
-			"icon": "&#xe63c ",
-			"href": "###",
-			"spread": false
-		},{
-			"title": "展示模板管理",
-			"icon": "&#xe63c ",
-			"href": "###",
-			"spread": false
-		},{
-			"title": "日志管理",
-			"icon": "&#xe63c ",
-			"href": "###",
-			"spread": false
-		},{
-			"title": "字典管理",
-			"icon": "&#xe63c ",
-			"href": "###",
+			"href": "/page/xtgl/listtree.html",
 			"spread": false
 		}
 ]

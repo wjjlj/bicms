@@ -9,7 +9,7 @@ layui.use(['form','layer','laydate','table','upload'],function(){
     //数据列表
     var tableIns = table.render({
         elem: '#linkList',
-        url : 'jgbmgl.json',
+        url : 'list.json',
         page : true,
         cellMinWidth : 95,
         height : "full-108",
@@ -17,9 +17,11 @@ layui.use(['form','layer','laydate','table','upload'],function(){
         limits : [10,15,20,25],
         cols : [[
             {type: "checkbox", width:50},
-            {field: 't1', title: '部门名称', align:'left'},
-            {field: 't2', title: '备注', align:'left'},
-            {field: 't3', title: '序号', width:80, align:'center'},
+            {field: 't1', title: '标题1', align:'left'},
+            {field: 't2', title: '标题2', align:'center'},
+            {field: 't2', title: '标题3', align:'center'},
+            {field: 't2', title: '标题4', align:'center'},
+            {field: 't3', title: '标题5', align:'center'},
             {title: '操作', width:180, templet:'#linkListBar', align:'center'}
         ]]
     });
@@ -33,7 +35,7 @@ layui.use(['form','layer','laydate','table','upload'],function(){
                 title : "修改",
                 type : 2,
                 area : ["360px","240px"],
-                content: ['/bicms/page/xtgl/jgbmglModify.html','no']
+                content: ['/bicms/page/xtgl/listModify.html','no']
             });
         }
         if (layEvent === 'del') {
@@ -69,13 +71,23 @@ layui.use(['form','layer','laydate','table','upload'],function(){
         });
     });
 
-    //新建
-    $(".newBuild").click(function(){
+    //新建1
+    $(".newBuildOne").click(function(){
         layer.open({
             title : "新建",
             type : 2,
             area : ["360px","240px"],
-            content: ['/bicms/page/xtgl/jgbmglNew.html','no']
+            content: ['/bicms/page/xtgl/listNew1.html','no']
+        })
+    });
+
+    //新建2
+    $(".newBuildTwo").click(function(){
+        layer.open({
+            title : "新建",
+            type : 2,
+            area : ["360px","334px"],
+            content: ['/bicms/page/xtgl/listNew2.html','no']
         })
     });
 
@@ -85,17 +97,26 @@ layui.use(['form','layer','laydate','table','upload'],function(){
             title : "修改",
             type : 2,
             area : ["360px","240px"],
-            content: ['/bicms/page/xtgl/jgbmglModify.html','no']
+            content: ['/bicms/page/xtgl/listModify.html','no']
         })
     });
 
-    //调整上级
-    $(".tzsj").click(function(){
+    //样式1
+    $(".ys1").click(function(){
         layer.open({
-            title : "调整上级",
+            title : "样式1",
             type : 2,
             area : ["350px","350px"],
-            content: ['/bicms/page/xtgl/jgbmglTzsj.html','no']
+            content: ['/bicms/page/xtgl/listYs1.html','no']
+        })
+    });
+    //样式2
+    $(".ys2").click(function(){
+        layer.open({
+            title : "样式2",
+            type : 2,
+            area : ["440px","400px"],
+            content: ['/bicms/page/xtgl/listYs2.html','no']
         })
     });
 })

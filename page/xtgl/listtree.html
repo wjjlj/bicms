@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>模型管理-分类管理</title>
+    <title>系统管理-列表树整体</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -24,23 +24,25 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <div class="layui-input-inline">
-                    <input type="text" class="layui-input searchVal" placeholder="部门名称"/>
+                    <input type="text" class="layui-input searchVal" placeholder="名称"/>
                 </div>
                 <div class="layui-input-inline">
                     <select name="city" lay-verify="">
-                        <option value="">查询范围</option>
-                        <option value="1">全局查询</option>
-                        <option value="2">当前部门</option>
+                        <option value="">下拉</option>
+                        <option value="1">...</option>
+                        <option value="2">...</option>
                     </select>
                 </div>
                 <a class="layui-btn layui-btn-normal search_btn" data-type="reload"><i class="fa fa-search"></i>搜索</a>
             </div>
         </form>
         <div class="layui-btn-container">
-            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal newBuild"><i class="fa fa-folder-o"></i>新建</button>
-            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal modify"><i class="fa fa-pencil"></i>修改</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal newBuildOne"><i class="fa fa-folder-o"></i>新建1</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal newBuildTwo"><i class="fa fa-folder-o"></i>新建2</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal modify"><i class="fa fa-edit"></i>修改</button>
             <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal del"><i class="fa fa-trash-o"></i>删除</button>
-            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal tzsj"><i class="fa fa-arrows-v"></i>调整上级</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal ys1">样式1</button>
+            <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal ys2">样式2</button>
         </div>
         <table id="linkList" lay-filter="linkList"></table>
         <script type="text/html" id="linkListBar">
@@ -54,7 +56,7 @@
 <script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
 <script type="text/javascript" src="js/jquery.ztree.exedit.js"></script>
 <script type="text/javascript" src="../../layui/layui.js"></script>
-<script type="text/javascript" src="jgbmgl.js"></script>
+<script type="text/javascript" src="list.js"></script>
 <SCRIPT type="text/javascript">
     var setting = {
         view: {
