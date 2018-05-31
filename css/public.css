@@ -355,6 +355,8 @@ table.bankimg tr td.chart:last-child {
 }
 /*企业画像基本信息*/
 div.qyimgJbxx p.xtitle {
+    width: 80%;
+    margin: 0 auto;
     color: #2980B9;
     margin-top: 25px;
     margin-bottom: 15px;
@@ -367,6 +369,7 @@ div.qyimgJbxx p.xtitle:first-child {
 
 }
 table.qyimg {
+    margin: 0 auto;
     color: #333;
     font-family: Microsoft YaHei;
     border-collapse: collapse;

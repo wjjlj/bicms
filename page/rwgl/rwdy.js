@@ -1,9 +1,10 @@
-layui.use(['form','layer','laydate','table','upload'],function(){
+layui.use(['element','form','layer','laydate','table','upload'],function(){
     var form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
         laydate = layui.laydate,
         upload = layui.upload,
+        element = layui.element,
         table = layui.table;
 
     //表格列表
@@ -104,6 +105,22 @@ layui.use(['form','layer','laydate','table','upload'],function(){
     }
     $(".btnNbsxtz").click(function(){
         rwdyNbsxtz();
+    });
+
+    //选项卡切换
+    $(".btnToggle").click(function(){
+        layer.open({
+            title: '选项卡切换',
+            content: '内容',
+            yes: function(index){
+                parent.tab.myTabChange(parent.tab.getLayId("任务实例"),parent.tab.hasTab("任务实例"),'任务实例','swsl888','/page/rwgl/rwsl.html');
+                layer.close(index);
+            }
+        });
+    });
+
+    $("#csqhiframe").on("click",function(){
+        parent.tab.myTabChange(parent.tab.getLayId("任务实例"),parent.tab.hasTab("任务实例"),'任务实例','swsl888','/page/rwgl/rwsl.html');
     });
 
     //列表操作

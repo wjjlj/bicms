@@ -64,6 +64,9 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 .topLevelMenus .layui-nav-item i.icon_znfx {background: url(../images/icon_znfx.png) no-repeat center center;}
 .topLevelMenus .layui-nav-item i.icon_xtgl {background: url(../images/icon_xtgl.png) no-repeat center center;}
 .topLevelMenus .layui-nav-item i.icon_rwgl {background: url(../images/icon_rwgl.png) no-repeat center center;}
+.topLevelMenus .layui-nav-item i.icon_fxkgl {background: url(../images/icon_fxkgl.png) no-repeat center center;}
+.topLevelMenus .layui-nav-item i.icon_syqktj {background: url(../images/icon_syqktj.png) no-repeat center center;}
+.topLevelMenus .layui-nav-item i.icon_khzjzz {background: url(../images/icon_khzjzz.png) no-repeat center center;}
 .topLevelMenus .layui-nav-item i.icon_404 {background: url(../images/icon_404.png) no-repeat center center;}
 .layui-nav .layui-this:after{ bottom:-5px!important;}
 .header .layui-nav-bar{display: none !important;}

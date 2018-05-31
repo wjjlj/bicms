@@ -40,7 +40,24 @@
 			"href": "/page/xtgl/listtree.html",
 			"spread": false
 		}
-]
+	],"fxkgl": [
+		{
+			"title": "数据表集管理",
+			"icon": "&#xe63c; ",
+			"href": "/page/fxkgl/listOne.html",
+			"spread": false
+		},{
+			"title": "数据表管理",
+			"icon": "&#xe63c ",
+			"href": "###",
+			"spread": false
+		},{
+			"title": "数据源管理",
+			"icon": "&#xe63c ",
+			"href": "###",
+			"spread": false
+		}
+	]
 }
 
 

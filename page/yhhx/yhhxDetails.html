@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="../../layui/font-awesome/css/font-awesome.css" media="all"/>
 </head>
 <body class="childrenBody changeTable changeSpace changeTab">
-
-<div class="layui-tab">
+<div class="layui-tab" style="height: 100%">
     <ul class="layui-tab-title">
         <li class="layui-this">基本信息</li>
         <li>股东关系</li>
@@ -71,9 +70,7 @@
             <table id="yhhxTyxx" lay-filter="yhhxTyxx"></table>
         </div>
         <div class="layui-tab-item">
-            <div class="layui-row layui-col-space10">
-                <div class="layui-col-md8 layui-col-md-offset2" id="a6"></div>
-            </div>
+            <div id="echart"></div>
         </div>
         <div class="layui-tab-item">
             <div class="layui-row layui-col-space10">
@@ -132,6 +129,7 @@
 
 <script type="text/javascript" src="../../layui/layui.js"></script>
 <script src="yhhxDetails.js"></script>
+<script src="../../js/echarts.min.js"></script>
 <script src="../../js/jquery.min.js"></script>
 <script src="../../js/highcharts.js"></script>
 <script src="../../js/highcharts-3d.js"></script>
@@ -350,6 +348,107 @@
         $('#a1').highcharts(json);
         $('#a2').highcharts(json);
         $('#a3').highcharts(json);
+    });
+
+    //ECharts自适应问题
+    $(function(){
+        var dom = document.getElementById("echart");
+        //自适应宽高
+        var myChartContainer = function () {
+            dom.style.width = (window.innerWidth-40)+'px';
+            dom.style.height = (window.innerHeight-75)+'px';
+        };
+        myChartContainer();
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            title: {
+                text: '堆叠区域图'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend: {
+                data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '邮件营销',
+                    type: 'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data: [120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name: '联盟广告',
+                    type: 'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data: [220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name: '视频广告',
+                    type: 'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data: [150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name: '直接访问',
+                    type: 'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data: [320, 332, 301, 334, 390, 330, 320]
+                },
+                {
+                    name: '搜索引擎',
+                    type: 'line',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    areaStyle: {normal: {}},
+                    data: [820, 932, 901, 934, 1290, 1330, 1320]
+                }
+            ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
     });
 </script>
 </body>

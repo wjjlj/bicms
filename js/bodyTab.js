@@ -104,12 +104,37 @@ layui.define(["element","jquery"],function(exports){
         }
 	}
 
+	/*
+	* 窗口切换(后加)
+	* 参数1:通过title获取lay-id
+	* 参数2:通过title判断点击的菜单时候打开过
+	* 参数3:Tab名称
+	* 参数4:指定新的lay-id
+	* 参数5:指向页面地址
+	* */
+    Tab.prototype.myTabChange = function(index1,index2,tabName,tabIdIndex,dataUrl){
+        if(index2 === 1){
+            element.tabChange("bodyTab", index1);
+            $(".clildFrame .layui-tab-item.layui-show").find("iframe")[0].contentWindow.location.reload();
+        } else {
+            var title = '';
+            title += '<cite>'+tabName+'</cite>';
+            title += '<i class="layui-icon layui-unselect layui-tab-close" data-id="'+tabIdIndex+'">&#x1006;</i>';
+            element.tabAdd("bodyTab", {
+                title : title,
+                content :"<iframe src='"+projectName+dataUrl+"' data-id='"+tabIdIndex+"'></frame>",
+                id : tabIdIndex
+            });
+            element.tabChange("bodyTab", tabIdIndex);
+        }
+    }
+
 	//参数设置
 	Tab.prototype.set = function(option) {
 		var _this = this;
 		$.extend(true, _this.tabConfig, option);
 		return _this;
-	};
+	}
 
 	//通过title获取lay-id
 	Tab.prototype.getLayId = function(title){

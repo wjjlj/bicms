@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>系统管理-用户管理-新建</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+</head>
+<body class="childrenBody">
+<form class="layui-form layui-row changePwd">
+    <div class="layui-col-xs12 layui-col-sm9 layui-col-md9">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="requiredIcon">*</span>名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" lay-verify="name" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">展示形式</label>
+            <div class="layui-input-inline">
+                <select name="">
+                    <option value="1">列表</option>
+                    <option value="2">柱状图</option>
+                    <option value="3">折线图</option>
+                    <option value="4">饼图</option>
+                    <option value="5">仪表盘</option>
+                </select>
+            </div>
+            <label class="layui-form-label" style="width: 90px;">是否需要配置</label>
+            <div class="layui-input-inline">
+                <select name="">
+                    <option value="1">是</option>
+                    <option value="2">否</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">模板Html</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入模板Html" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">模板脚本</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入模板脚本" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">描述</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入描述" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="requiredIcon">*</span>序号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="order" lay-verify="order" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-normal" lay-filter="*" lay-submit>保存</button>
+                <button type="reset" class="layui-btn layui-btn-primary" onclick="window.history.back()">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function () {
+        var layer = layui.layer,
+            form = layui.form,
+            $ = layui.jquery;
+        var index = parent.layer.getFrameIndex(window.name);
+
+        //自定义验证规则
+        form.verify({
+            name: function (value) {
+                if (value === '') {
+                    return '名称不能为空';
+                }
+            },
+            order: function (value) {
+                if (value === '') {
+                    return '序号不能为空';
+                }
+            }
+        });
+        //监听提交
+        form.on('submit(*)', function (data) {
+            layer.load(1, {time: 2 * 1000});
+            setTimeout(function () {
+                parent.layer.alert(JSON.stringify(data.field), {
+                    title: '最终的提交信息'
+                }, function (index) {
+                    parent.layer.close(index);
+                })
+            }, 2000);
+            return false;
+        });
+        // form.on('submit(*)', function (data) {
+        //     console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
+        //     console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
+        //     console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+        //     parent.layer.close(index);
+        //     return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        // });
+    });
+</script>
+</body>
+</html>

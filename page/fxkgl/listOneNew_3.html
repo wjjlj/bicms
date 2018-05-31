@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>分析库管理-新建</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../css/public.css" media="all"/>
+</head>
+<body class="childrenBody">
+<form class="layui-form layui-row changePwd">
+    <div class="layui-col-xs12 layui-col-sm9 layui-col-md9">
+        <div class="layui-form-item">
+            <label class="layui-form-label">任务类型</label>
+            <div class="layui-input-inline">
+                <select name="">
+                    <option value="1">数据转换</option>
+                </select>
+            </div>
+            <label class="layui-form-label"><span class="requiredIcon">*</span>顺序号</label>
+            <div class="layui-input-inline">
+                <input type="text" placeholder="1" name="sxh" lay-verify="sxh" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="requiredIcon">*</span>数据抽取SQL</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入模板数据抽取SQL" name="sjcqsql" lay-verify="sjcqsql" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">抽取方式</label>
+            <div class="layui-input-inline">
+                <select name="">
+                    <option value="1">全量</option>
+                    <option value="2">增量</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">目标数据源</label>
+            <div class="layui-input-inline">
+                <select name="">
+                    <option value="1">EAST3.0</option>
+                    <option value="2">xxx银行</option>
+                    <option value="3">xxx银行</option>
+                </select>
+            </div>
+            <label class="layui-form-label"><span class="requiredIcon">*</span>目标表</label>
+            <div class="layui-input-inline">
+                <input type="text" name="mbb" lay-verify="mbb" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="requiredIcon">*</span>目标表定义SQL</label>
+            <div class="layui-input-block">
+                <textarea name="mbbdysql" lay-verify="mbbdysql" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-inline">
+                <select name="">
+                    <option value="1">启用</option>
+                    <option value="2">禁用</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-normal" lay-filter="*" lay-submit>保存</button>
+                <button type="reset" class="layui-btn layui-btn-primary" onclick="window.history.back()">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" src="../../layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function () {
+        var layer = layui.layer,
+            form = layui.form,
+            $ = layui.jquery;
+        var index = parent.layer.getFrameIndex(window.name);
+
+        //自定义验证规则
+        form.verify({
+            sxh: function (value) {
+                if (value === '') {
+                    return '顺序号不能为空';
+                }
+            },
+            sjcqsql: function (value) {
+                if (value === '') {
+                    return '数据抽取SQL不能为空';
+                }
+            },
+            mbb: function (value) {
+                if (value === '') {
+                    return '目标表不能为空';
+                }
+            },
+            mbbdysql: function (value) {
+                if (value === '') {
+                    return '目标表定义SQL不能为空';
+                }
+            }
+        });
+        //监听提交
+        //以下只是演示请求过程的load层，真正请求数据时请以ajax请求添加load层效果
+        form.on('submit(*)', function (data) {
+            layer.load(1, {time: 2 * 1000});
+            setTimeout(function () {
+                parent.layer.alert(JSON.stringify(data.field), {
+                    title: '最终的提交信息'
+                }, function (index) {
+                    parent.layer.close(index);
+                })
+            }, 2000);
+            return false;
+        });
+        // form.on('submit(*)', function (data) {
+        //     console.log(data.elem) //被执行事件的元素DOM对象，一般为button对象
+        //     console.log(data.form) //被执行提交的form对象，一般在存在form标签时才会返回
+        //     console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+        //     parent.layer.close(index);
+        //     return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        // });
+    });
+</script>
+</body>
+</html>
