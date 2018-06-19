@@ -393,13 +393,17 @@ table.qyimg td {
 .catalogTitle {
     height: 30px;
     line-height: 30px;
-    background-color: #3498db;
+    background-color: #f3f6fd;
     padding: 0 10px;
-    color: #ffffff;
+    color: #424e67;
+    border: 1px solid #dbe1ed;
+    box-sizing: border-box;
 }
-.catalog {
-    height: 100%;
-    border: 1px solid #3498db;
+.catalogCon {
+    padding: 5px;
+    border: 1px solid #dbe1ed;
+    border-top: none;
+    box-sizing: border-box;
     overflow: auto;
 }
 /*必填样式*/
@@ -498,4 +502,8 @@ table.ys1 td.cz a {
 }
 .popCon {
     margin-bottom: 41px;
+    overflow-y: auto;
+}
+.layui-unselect dl {
+    max-height: 150px;
 }

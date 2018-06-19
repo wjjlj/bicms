@@ -17,8 +17,8 @@
 <body class="childrenBody changeTable changeSpace">
 <div class="layui-row layui-col-space10">
     <div class="layui-col-xs2">
-        <p class="catalogTitle">目录管理</p>
-        <ul id="treeDemo" class="ztree catalog"></ul>
+        <div class="catalogTitle">目录管理</div>
+        <div class="catalogCon" id="tree"><ul id="treeDemo" class="ztree"></ul></div>
     </div>
     <div class="layui-col-xs10">
         <form class="layui-form">
@@ -48,6 +48,13 @@
         </script>
     </div>
 </div>
+<script>
+    (function(){
+        var tree = document.getElementById("tree");
+        var treeHeight = window.innerHeight;
+        tree.style.height = (treeHeight-50) + "px";
+    })();
+</script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.ztree.core.js"></script>
 <script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>

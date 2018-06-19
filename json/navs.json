@@ -4,7 +4,21 @@
 			"title": "分类管理",
 			"icon": "&#xe63c; ",
 			"href": "/page/mxgl/flgl.html",
-			"spread": false
+			"spread": false,
+			"children": [
+				{
+					"title": "测试1",
+					"icon": "&#xe63c; ",
+					"href": "/page/mxgl/flgl.html",
+					"spread": false
+				},
+				{
+					"title": "测试2",
+					"icon": "&#xe63c ",
+					"href": "/page/mxgl/mxpz.html",
+					"spread": false
+				}
+			]
 		},{
 			"title": "模型配置",
 			"icon": "&#xe63c ",
@@ -15,6 +29,31 @@
 			"icon": "&#xe63c; ",
 			"href": "/page/mxgl/mxsp.html",
 			"spread": false
+		},{
+			"title": "其他页面",
+			"icon": "&#xe63c; ",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "分类管理",
+					"icon": "&#xe63c; ",
+					"href": "/page/mxgl/flgl.html",
+					"spread": false
+				},
+				{
+					"title": "模型配置",
+					"icon": "&#xe63c ",
+					"href": "/page/mxgl/mxpz.html",
+					"spread": false
+				},
+				{
+					"title": "模型审批",
+					"icon": "&#xe63c; ",
+					"href": "/page/mxgl/mxsp.html",
+					"spread": false
+				}
+			]
 		}
 	],"rwgl": [
 		{

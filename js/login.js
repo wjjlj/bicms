@@ -41,5 +41,4 @@ function formCheck() {
     }
     return true;
 }
-
 window.onload = inputFocus;

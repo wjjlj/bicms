@@ -49,7 +49,6 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 #lock-box p{ color:#e60000; }
 /*顶部*/
 .header{ z-index:2000;}
-.logo{ color: #fff; float: left; height:60px; padding:0 5px; text-align: center; width:266px; background:url(../images/logo.png) no-repeat center center; display:block}
 /*.hideMenu{ float:left; width:20px; height:20px; margin-top:15px; font-size:17px; line-height:20px; text-align:center; padding:5px 5px; color:#fff; background-color:#1AA094; }*/
 /*.hideMenu:hover{ color:#fff; }*/
 /*顶部右侧*/
@@ -212,6 +211,10 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 	color: #fff;
 	background-color: #3498db;
 }
+.main_body.changeIndex .layui-bg-diy .layui-nav .layui-nav-item.layui-nav-itemed .layui-this a {
+	color: #fff;
+	background-color: #3498db;
+}
 .main_body.changeIndex .layui-nav-tree .layui-nav-bar {
 	background-color: #3498db ;
 	display: none;
@@ -228,15 +231,176 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 	margin: 5px 10px;
 	border-radius: 5px;
 }
+.main_body.changeIndex .layui-nav-tree .layui-nav-more {
+	top: 17px;
+	right: 15px;
+	border-top-color: #3498db;
+}
+.main_body.changeIndex .layui-nav-itemed .layui-nav-more{
+	top: 10px;
+	border-color: transparent transparent #3498db;
+}
+.main_body.changeIndex .layui-nav-tree .layui-nav-item.layui-nav-itemed {
+	background-color: #f0f2f7 !important;
+}
+.main_body.changeIndex .layui-nav-tree .layui-nav-item.layui-nav-itemed>a {
+	color: #3d4d66!important;
+	background-color: #d8e6f3;
+}
+.main_body.changeIndex .layui-nav-tree .layui-nav-item.layui-nav-itemed .layui-nav-child {
+	background-color: transparent!important;
+}
+.main_body.changeIndex .layui-nav-tree .layui-nav-item.layui-nav-itemed:before {
+	display: none;
+}
+
+.logo {
+	color: #fff;
+	float: left;
+	height: 60px;
+	text-align: center;
+	width: 266px;
+	background: url(../images/logo.png) no-repeat center center;
+	display: block
+}
 .layui-nav.topLevelMenus {
-	padding-right: 0px;
+	padding: 0 0 0 15px;
+}
+.layui-nav.topLevelMenus .layui-nav-item a {
+	padding: 0 12px;
 }
 .layui-nav.top_menu {
-	padding-right: 0px;
+	padding: 0px;
+}
+.layui-nav.top_menu .layui-nav-item a.signOut {
+	padding: 0 15px;
+}
+
+/*小于等于1440*/
+@media screen and (max-width: 1440px) {
+	.logo {
+		color: #fff;
+		float: left;
+		height: 60px;
+		text-align: center;
+		width: 200px;
+		background: url(../images/logo200x44.png) no-repeat center center;
+		display: block
+	}
+	.layui-nav.topLevelMenus {
+		padding: 0 0 0 10px;
+	}
+	.layui-nav.topLevelMenus .layui-nav-item a {
+		padding: 0 11px;
+	}
+	.layui-nav.top_menu {
+		padding: 0;
+	}
+	.layui-nav.top_menu .layui-nav-item a.signOut {
+		padding: 0 12px;
+	}
+}
+
+/*小于等于1400*/
+@media screen and (max-width: 1400px) {
+	.logo {
+		color: #fff;
+		float: left;
+		height: 60px;
+		text-align: center;
+		width: 200px;
+		background: url(../images/logo200x44.png) no-repeat center center;
+		display: block
+	}
+	.layui-nav.topLevelMenus {
+		padding: 0 0 0 10px;
+	}
+	.layui-nav.topLevelMenus .layui-nav-item a {
+		padding: 0 8px;
+	}
+	.layui-nav.top_menu {
+		padding: 0;
+	}
+	.layui-nav.top_menu .layui-nav-item a.signOut {
+		padding: 0 10px;
+	}
 }
 
 
+/*小于等于1366*/
+@media screen and (max-width: 1366px) {
+	.logo {
+		color: #fff;
+		float: left;
+		height: 60px;
+		text-align: center;
+		width: 200px;
+		background: url(../images/logo200x44.png) no-repeat center center;
+		display: block
+	}
+	.layui-nav.topLevelMenus {
+		padding: 0 0 0 10px;
+	}
+	.layui-nav.topLevelMenus .layui-nav-item a {
+		padding: 0 8px;
+	}
+	.layui-nav.top_menu {
+		padding: 0;
+	}
+	.layui-nav.top_menu .layui-nav-item a.signOut {
+		padding: 0 10px;
+	}
+}
 
+/*小于等于1280*/
+@media screen and (max-width: 1280px) {
+	.logo {
+		color: #fff;
+		float: left;
+		height: 60px;
+		text-align: center;
+		width: 200px;
+		background: url(../images/logo200x44.png) no-repeat center center;
+		display: none
+	}
+	.layui-nav.topLevelMenus {
+		padding: 0 0 0 10px;
+	}
+	.layui-nav.topLevelMenus .layui-nav-item a {
+		padding: 0 10px;
+	}
+	.layui-nav.top_menu {
+		padding: 0;
+	}
+	.layui-nav.top_menu .layui-nav-item a.signOut {
+		padding: 0 15px;
+	}
+}
+
+/*小于等于1024*/
+@media screen and (max-width: 1024px) {
+	.logo {
+		color: #fff;
+		float: left;
+		height: 60px;
+		text-align: center;
+		width: 200px;
+		background: url(../images/logo200x44.png) no-repeat center center;
+		display: none;
+	}
+	.layui-nav.topLevelMenus {
+		padding: 0;
+	}
+	.layui-nav.topLevelMenus .layui-nav-item a {
+		padding: 0 3px;
+	}
+	.layui-nav.top_menu {
+		padding: 0;
+	}
+	.layui-nav.top_menu .layui-nav-item a.signOut {
+		padding: 0 10px;
+	}
+}
 
 
 

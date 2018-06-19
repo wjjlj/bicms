@@ -17,8 +17,8 @@ layui.use(['form','layer','laydate','table','upload'],function(){
         limits : [10,15,20,25],
         cols : [[
             {type: "checkbox", width:50},
-            {field: 't1', title: '分类名称', align:'left'},
-            {field: 't2', title: '备注', align:'left'},
+            {field: 't1', title: '分类名称', width:280, align:'left'},
+            {field: 't2', title: '备注', width:280, align:'left'},
             {field: 't3', title: '序号', width:80, align:'center'},
             {title: '操作', width:180, templet:'#linkListBar', align:'center'}
         ]]

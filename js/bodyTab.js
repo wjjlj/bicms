@@ -90,10 +90,32 @@ layui.define(["element","jquery"],function(exports){
 		//显示左侧菜单
 		var _this = this;
 		// $(".navBar ul").html('<li class="layui-nav-item layui-this"><a data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>后台首页</cite></a></li>').append(_this.navBar(dataStr)).height($(window).height()-210);
-        $(".navBar ul").html('').append(_this.navBar(dataStr)).height($(window).height()-210);
+        $(".navBar ul").html('').append(_this.navBar(dataStr)).height($(window).height());
+
+        var $curr = null,
+            $condition = $(".navBar ul>li:first-child>a:first-child").data("url");
+        if(typeof $condition === "undefined"){
+            $curr = $(".navBar ul>li:first-child>dl>dd:first-child");
+            $curr.on("click",function () {
+                $(this).addClass("layui-this");
+                $(this).parents(".layui-nav-item").addClass("layui-nav-itemed");
+                tab.tabAdd($(this).children("a"));
+            });
+        } else {
+            $curr = $(".navBar ul").children().eq(0);
+            $curr.on("click",function () {
+                $(this).addClass("layui-this");
+                tab.tabAdd($(this).children("a"));
+            });
+		}
+        var event = document.createEvent("MouseEvents");
+        event.initMouseEvent("click", true, true, document.defaultView, 0, 0, 0, 0, 0,
+			false, false, false, false, 0, null);
+        $curr[0].dispatchEvent(event);
+
         element.init();  //初始化页面元素
 		$(window).resize(function(){
-			$(".navBar").height($(window).height()-210);
+			$(".navBar").height($(window).height());
 		})
 	}
 

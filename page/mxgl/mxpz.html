@@ -18,7 +18,7 @@
 <div class="layui-row layui-col-space10">
     <div class="layui-col-xs2">
         <p class="catalogTitle">目录管理</p>
-        <ul id="treeDemo" class="ztree catalog"></ul>
+        <div class="catalogCon" id="tree"><ul id="treeDemo" class="ztree"></ul></div>
     </div>
     <div class="layui-col-xs10">
         <form class="layui-form">
@@ -42,6 +42,7 @@
                         <option value="3">3</option>
                     </select>
                 </div>
+                <div class="layui-form-mid">-</div>
                 <div class="layui-input-inline">
                     <select name="city" lay-verify="">
                         <option value="">启用状态</option>
@@ -67,6 +68,7 @@
             <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-mail-reply "></i>导入</button>
             <button class="layui-btn layui-btn layui-btn-sm layui-btn-normal"><i class="fa fa-handshake-o"></i>共享</button>
         </div>
+
         <table id="linkList" lay-filter="linkList"></table>
         <script type="text/html" id="linkListBar">
             <a href="javascript:;" lay-event="mod" style="margin-right: 10px;color:#3498db"><i class="fa fa-pencil"></i> 修改</a>
@@ -75,6 +77,13 @@
         </script>
     </div>
 </div>
+<script>
+    (function(){
+        var tree = document.getElementById("tree");
+        var treeHeight = window.innerHeight;
+        tree.style.height = (treeHeight-50) + "px";
+    })();
+</script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.ztree.core.js"></script>
 <script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>

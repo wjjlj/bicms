@@ -93,11 +93,10 @@ layui.use(['bodyTab', 'form', 'element', 'layer', 'jquery'], function () {
     });
 
     // 添加新窗口
-    $("body").on("click", ".layui-nav .layui-nav-item a:not('.mobileTopLevelMenus .layui-nav-item a')", function () {
+    $("body").on("click", ".layui-nav .layui-nav-item a", function () {
         //如果不存在子级
         if ($(this).siblings().length == 0) {
             addTab($(this));
-            $('body').removeClass('site-mobile');  //移动端点击菜单关闭菜单层
         }
         $(this).parent("li").siblings().removeClass("layui-nav-itemed");
     })
